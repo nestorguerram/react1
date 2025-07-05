@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./App.css"
 // Funciones de validación para cada campo
 const validarNombre = (valor) => {
   if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{2,}$/.test(valor)) {
@@ -7,6 +7,8 @@ const validarNombre = (valor) => {
   }
   return "";
 };
+
+
 
 const validarApellido = (valor) => {
   if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{2,}$/.test(valor)) {
@@ -47,6 +49,11 @@ function RegisterForm() {
   });
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
+  const [mostrarPassword, setMostrarPassword] = useState(false);
+  const [fueEnviado, setFueEnviado] = useState(false);
+
+
+  
 
   // Actualiza el formulario al escribir
   const handleChange = (e) => {
@@ -58,6 +65,7 @@ function RegisterForm() {
   // Valida todos los campos al enviar
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFueEnviado (true);
     const nuevosErrores = {};
 
     const errorNombre = validarNombre(form.nombre);
@@ -99,19 +107,20 @@ function RegisterForm() {
       <label>
         Nombre:
         <input
-          type="text"
-          name="nombre"
-          value={form.nombre}
-          onChange={handleChange}
-          autoComplete="off"
-          className={errors.nombre ? "error" : ""}
-        />
+            type="text"
+            name="nombre"
+            value={form.nombre}
+            onChange={handleChange}
+            autoComplete="off"
+            className={errors.nombre ? "input-error" : ""}
+                    />
         <small className="hint">* Solo letras, mínimo 2 caracteres.</small>
         {errors.nombre && (
-          <span className="error">{errors.nombre}</span>
+            <span className="error">{errors.nombre}</span>
         )}
-      </label>
-      <br />
+        </label>
+        <br />
+
 
       <label>
         Apellido:
@@ -149,21 +158,44 @@ function RegisterForm() {
 
       <label>
         Contraseña:
+        <div style={{ display: "flex", alignItems: "center" }}>
         <input
-          type="password"
-          name="password"
-          value={form.password}
-          onChange={handleChange}
-          className={errors.password ? "input-error" : ""}
-        />
-        <small className="hint">
-          * Mín. 8 caracteres, al menos 1 mayúscula, 1 minúscula, 1 número y 1 símbolo.
-        </small>
-        {errors.password && (
-          <span className="error">{errors.password}</span>
+            type={mostrarPassword ? "text" : "password"}
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            className={errors.password ? "input-error" : ""}
+            style={{ flex: 1 }}
+            />
+    
+        <button
+            type="button"
+            onClick={() => setMostrarPassword((prev) => !prev)}
+            style={{
+            marginLeft: "8px",
+            padding: "4px 10px",
+            fontSize: "0.95rem",
+            cursor: "pointer",
+            borderRadius: "6px",
+            border: "1px solid #aaa",
+            background: "#f7f7f7"
+            }}
+            >
+        {mostrarPassword ? "Ocultar" : "Mostrar"}
+        </button>
+        </div>
+  
+  <small className="hint">
+    * Mín. 8 caracteres, al menos 1 mayúscula, 1 minúscula, 1 número y 1 símbolo.
+    </small>
+    {errors.password && (
+        <span className="error">{errors.password}</span>
         )}
-      </label>
-      <br />
+        </label>
+        <br />
+
+
+        
 
       <label>
         Género:
@@ -184,11 +216,12 @@ function RegisterForm() {
       {success && (
         <p style={{ color: "green" }}>¡Registro exitoso!</p>
       )}
-      {Object.values(errors).length > 0 && !success && (
+      {fueEnviado && Object.values(errors).length > 0 && !success && (
         <p style={{ color: "red" }}>
-          Revisa los campos marcados en rojo.
+        Revisa los campos marcados en rojo.
         </p>
       )}
+
     </form>
   );
 }

@@ -39,8 +39,12 @@
 
 
 /* desde aqui parte el codigo */
-.App {
+body {
   font-family: Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+.App {
   text-align: center;
   margin-top: 40px;
 }
@@ -76,7 +80,7 @@
   font-size: 1rem;
 }
 
-.register-form button {
+.register-form button[type="submit"] {
   width: 100%;
   padding: 12px;
   background: #1976d2;
@@ -88,7 +92,7 @@
   margin-top: 12px;
 }
 
-.register-form button:hover {
+.register-form button[type="submit"]:hover {
   opacity: 0.85;
 }
 
@@ -106,8 +110,7 @@
   margin-top: 2px;
 }
 
-
 .input-error {
-  border: 2px solid #f44336 !important; /* Rojo intenso */
-  background: #fff5f5;                  /* Fondo muy suave */
+  border: 2px solid #f44336 !important;
+  background: #fff5f5;
 }
