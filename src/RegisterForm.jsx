@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import avatarHombre from "./assets/hombre.png";
 import avatarMujer from "./assets/mujer.png";
-import avatarGato from "./assets/otro.png";
+import avatarOtro from "./assets/otro.png";
 import "./App.css"
 
 
@@ -45,7 +45,7 @@ const validarPassword = (valor) => {
 const avatarOptions = {
   masculino: avatarHombre,
   femenino: avatarMujer,
-  otro: avatarGato,
+  otro: avatarOtro,
 };
 
 
@@ -63,11 +63,7 @@ function RegisterForm() {
   const [fueEnviado, setFueEnviado] = useState(false);
 
 
-  const avatarOptions = {
-  masculino: avatarHombre,
-  femenino: avatarMujer,
-  otro: avatarGato,
-};
+  
 
   // Actualiza el formulario al escribir
   const handleChange = (e) => {
@@ -118,7 +114,7 @@ function RegisterForm() {
         <img
         src={avatarOptions[form.genero]}
         alt="Avatar"
-        style={{ width: "90px", height: "90px", borderRadius: "50%" }}
+        style={{ width: "150px", height: "100px", borderRadius: "50%" }}
         />
     </div>
 
