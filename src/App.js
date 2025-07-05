@@ -3,6 +3,8 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home"; 
 import LoginForm from "./LoginForm";
+import Dashboard from "./Dashboard"; // <-- agrega esto arriba
+
 
 
 
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" element={<Home />} />           {/* Página de inicio */}
         <Route path="/register" element={<RegisterForm />} /> {/* Página de registro */}
         <Route path="/login" element={<LoginForm />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
        
       </Routes>
     </BrowserRouter>
