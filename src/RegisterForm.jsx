@@ -1,5 +1,14 @@
 import React, { useState } from "react";
+import avatarHombre from "./assets/hombre.png";
+import avatarMujer from "./assets/mujer.png";
+import avatarGato from "./assets/otro.png";
 import "./App.css"
+
+
+
+
+
+
 // Funciones de validación para cada campo
 const validarNombre = (valor) => {
   if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{2,}$/.test(valor)) {
@@ -34,10 +43,11 @@ const validarPassword = (valor) => {
 };
 
 const avatarOptions = {
-  masculino: "👨",
-  femenino: "👩",
-  otro: "🐱",
+  masculino: avatarHombre,
+  femenino: avatarMujer,
+  otro: avatarGato,
 };
+
 
 function RegisterForm() {
   const [form, setForm] = useState({
@@ -53,7 +63,11 @@ function RegisterForm() {
   const [fueEnviado, setFueEnviado] = useState(false);
 
 
-  
+  const avatarOptions = {
+  masculino: avatarHombre,
+  femenino: avatarMujer,
+  otro: avatarGato,
+};
 
   // Actualiza el formulario al escribir
   const handleChange = (e) => {
@@ -100,9 +114,14 @@ function RegisterForm() {
     <form onSubmit={handleSubmit} className="register-form">
       <h2>Registro de Usuario</h2>
 
-      <div style={{ fontSize: "3rem", textAlign: "center" }}>
-        {avatarOptions[form.genero]}
-      </div>
+      <div style={{ textAlign: "center" }}>
+        <img
+        src={avatarOptions[form.genero]}
+        alt="Avatar"
+        style={{ width: "90px", height: "90px", borderRadius: "50%" }}
+        />
+    </div>
+
 
       <label>
         Nombre:
