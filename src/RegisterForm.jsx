@@ -89,10 +89,14 @@ function RegisterForm() {
         genero: form.genero,
       });
       localStorage.setItem("usuarios", JSON.stringify(usuarios));
+      localStorage.setItem("nombreUsuario", form.nombre + " " + form.apellido); // <-- línea mejorada
+ // <-- AGREGAR AQUÍ
+
       setSuccess(true);
       setFueEnviado(false);
       mostrarToast();
       navigate("/home", { state: { nombre: form.nombre } }); //redireccionar a Home después del registro exitoso
+      
       setForm({
         nombre: "",
         apellido: "",

@@ -6,7 +6,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 function Home() {
   const location = useLocation();
   const navigate = useNavigate();
-  const nombre = location.state?.nombre || "Usuario";
+  const nombre = location.state?.nombre || localStorage.getItem("nombreUsuario") || "Usuario";
+
+  <h1>¡Bienvenido a React, {nombre}!</h1>
+
 
   return (
     <div style={{

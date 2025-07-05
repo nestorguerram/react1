@@ -7,6 +7,7 @@ function LoginForm() {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState("");
+  
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -37,6 +38,8 @@ function LoginForm() {
     }
     // hasta aqui el login es exitoso
     setError("");
+    localStorage.setItem("nombreUsuario", usuario.nombre + " " + usuario.apellido);
+
     navigate("/dashboard", { state: { user } });
   };
 
