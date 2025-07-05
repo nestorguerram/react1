@@ -1,27 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import Component from './Component';
+import React from "react";
+import RegisterForm from "./RegisterForm";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        
-        <p>
-          Hola a todos //aqui va el texto
-        </p>
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Component />
-      </header>
+      <h1>Mi App de Registro</h1>
+      <RegisterForm />
     </div>
   );
 }

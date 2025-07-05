@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
 }
 
@@ -35,4 +35,79 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* desde aqui parte el codigo */
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.register-form {
+  max-width: 430px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #f5f7fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.register-form h2 {
+  margin-bottom: 20px;
+}
+
+.register-form label {
+  display: block;
+  margin-bottom: 12px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.register-form input,
+.register-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 3px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 12px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.register-form button:hover {
+  opacity: 0.85;
+}
+
+.hint {
+  color: #888;
+  font-size: 0.89rem;
+  margin-left: 4px;
+  display: block;
+}
+
+.error {
+  color: red;
+  font-size: 0.92rem;
+  display: block;
+  margin-top: 2px;
+}
+
+
+.input-error {
+  border: 2px solid #f44336 !important; /* Rojo intenso */
+  background: #fff5f5;                  /* Fondo muy suave */
 }
