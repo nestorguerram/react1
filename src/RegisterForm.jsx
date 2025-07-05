@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function RegisterForm() {
@@ -17,8 +18,11 @@ function RegisterForm() {
   const [success, setSuccess] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
   const [fueEnviado, setFueEnviado] = useState(false);
+  
 
   // Funciones de validación de campos
+  const navigate = useNavigate();
+
   const validarNombre = (valor) => {
     if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{2,}$/.test(valor))
       return "El nombre debe tener al menos 2 letras y no contener números.";
@@ -88,6 +92,7 @@ function RegisterForm() {
       setSuccess(true);
       setFueEnviado(false);
       mostrarToast();
+      navigate("/home", { state: { nombre: form.nombre } }); //redireccionar a Home después del registro exitoso
       setForm({
         nombre: "",
         apellido: "",
@@ -99,6 +104,8 @@ function RegisterForm() {
       setSuccess(false);
     }
   };
+
+
 
   return (
     <form className="register-form" onSubmit={handleSubmit} noValidate>

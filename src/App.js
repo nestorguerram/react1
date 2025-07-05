@@ -8,6 +8,8 @@ import Dashboard from "./Dashboard"; // <-- agrega esto arriba
 
 
 
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,8 @@ function App() {
         <Route path="/register" element={<RegisterForm />} /> {/* Página de registro */}
         <Route path="/login" element={<LoginForm />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/home" element={<Home />} />
+
 
        
       </Routes>

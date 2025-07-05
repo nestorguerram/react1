@@ -1,14 +1,44 @@
 // src/Home.jsx
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import logo from "./logo.svg";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Home() {
+  const location = useLocation();
   const navigate = useNavigate();
+  const nombre = location.state?.nombre || "Usuario";
+
   return (
-    <div style={{ textAlign: "center", marginTop: 100 }}>
-      <h1>Bienvenido al Sistema</h1>
-      <button onClick={() => navigate("/login")} style={{ margin: 10 }}>Iniciar Sesión</button>
-      <button onClick={() => navigate("/register")} style={{ margin: 10 }}>Registrarse</button>
+    <div style={{
+      textAlign: "center",
+      marginTop: 80,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center"
+    }}>
+      <img
+        src={logo}
+        alt="React Logo"
+        width={120}
+        style={{ marginBottom: 20, animation: "spin 2s linear infinite" }}
+      />
+      <h1>¡Bienvenido a React, {nombre}!</h1>
+      <p>Has registrado exitosamente tu cuenta. Ya puedes usar el sistema.</p>
+      <button
+        onClick={() => navigate("/login")}
+        style={{
+          padding: "10px 30px",
+          borderRadius: 8,
+          background: "#282c34",
+          color: "#fff",
+          border: "none",
+          fontWeight: "bold",
+          marginTop: 25,
+          cursor: "pointer"
+        }}
+      >
+        Ir al inicio de sesión
+      </button>
     </div>
   );
 }
