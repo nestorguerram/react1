@@ -98,22 +98,43 @@ function RegisterForm() {
 
     setErrors(nuevosErrores);
 
-    // Si no hay errores, muestra éxito, resetea el formulario y el toast
-    if (Object.keys(nuevosErrores).length === 0) {
-      setSuccess(true);
-      setFueEnviado(false);
-      mostrarToast();
-      setForm({
-        nombre: "",
-        apellido: "",
-        email: "",
-        password: "",
-        genero: form.genero,
-      });
-    } else {
-      setSuccess(false);
-    }
-  };
+ if (Object.keys(nuevosErrores).length === 0) {
+  // 1. Obtiene los usuarios actuales
+  const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
+
+  // 2. Verifica si ya existe un usuario con ese email
+  if (usuarios.find(u => u.user === form.email)) {
+    setErrors({ ...nuevosErrores, email: "El email ya está registrado." });
+    setSuccess(false);
+    return;
+  }
+
+  // 3. Agrega el nuevo usuario (usa email como campo user)
+  usuarios.push({
+    user: form.email,             // El email como identificador único
+    password: form.password,      // La contraseña
+    nombre: form.nombre,
+    apellido: form.apellido,
+    genero: form.genero
+  });
+
+  // 4. Guarda el array actualizado en localStorage
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+  // 5. Estado de éxito, limpieza, toast, etc.
+  setSuccess(true);
+  setFueEnviado(false);
+  mostrarToast();
+  setForm({
+    nombre: "",
+    apellido: "",
+    email: "",
+    password: "",
+    genero: form.genero,
+  });
+} else {
+  setSuccess(false);
+}
 
   // Renderiza el formulario
   return (
@@ -258,6 +279,6 @@ function RegisterForm() {
     </form>
   );
 }
-
+}
 // Exporta el componente para usarlo en App.js
-export default RegisterForm;
+export default RegisterForm;  
