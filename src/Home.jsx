@@ -1,6 +1,6 @@
 // src/Home.jsx
 import React from "react";
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Home() {
@@ -16,12 +16,18 @@ function Home() {
       flexDirection: "column",
       alignItems: "center"
     }}>
+      
+
       <img
-        src={logo}
-        alt="React Logo"
-        width={120}
-        style={{ marginBottom: 20, animation: "spin 2s linear infinite" }}
-      />
+        src="/logo192.png"
+         alt="Logo React PNG"
+         className="logo-spin"
+         width={120}
+         style={{ marginBottom: 20 }}
+        />
+
+
+
       <h1>¡Bienvenido a React, {nombre}!</h1>
       <p>Has registrado exitosamente tu cuenta. Ya puedes usar el sistema.</p>
       <button
