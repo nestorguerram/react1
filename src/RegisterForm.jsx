@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // Importa los avatares para cada género
 import avatarHombre from "./assets/hombre.png";
 import avatarMujer from "./assets/mujer.png";
-import avatarOtro from "./assets/otros.png";
+import avatarOtro from "./assets/otro.png";
 import "./App.css";
 
 // Objeto para acceder a los avatares según el género seleccionado
