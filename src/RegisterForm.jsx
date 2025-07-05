@@ -1,15 +1,18 @@
 import React, { useState } from "react";
+// Importa los avatares para cada género
 import avatarHombre from "./assets/hombre.png";
 import avatarMujer from "./assets/mujer.png";
-import avatarOtro from "./assets/otro.png";
-import "./App.css"
+import avatarOtro from "./assets/otros.png";
+import "./App.css";
 
+// Objeto para acceder a los avatares según el género seleccionado
+const avatarOptions = {
+  masculino: avatarHombre,
+  femenino: avatarMujer,
+  otro: avatarOtro,
+};
 
-
-
-
-
-// Funciones de validación para cada campo
+// Función de validación para el nombre
 const validarNombre = (valor) => {
   if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{2,}$/.test(valor)) {
     return "El nombre debe tener al menos 2 letras y no contener números.";
@@ -17,8 +20,7 @@ const validarNombre = (valor) => {
   return "";
 };
 
-
-
+// Función de validación para el apellido
 const validarApellido = (valor) => {
   if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{2,}$/.test(valor)) {
     return "El apellido debe tener al menos 2 letras y no contener números.";
@@ -26,6 +28,7 @@ const validarApellido = (valor) => {
   return "";
 };
 
+// Función de validación para el email
 const validarEmail = (valor) => {
   if (!/^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$/.test(valor)) {
     return "El email no es válido. Ejemplo: usuario@dominio.com";
@@ -33,6 +36,7 @@ const validarEmail = (valor) => {
   return "";
 };
 
+// Función de validación para la contraseña
 const validarPassword = (valor) => {
   if (
     !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$/.test(valor)
@@ -42,14 +46,9 @@ const validarPassword = (valor) => {
   return "";
 };
 
-const avatarOptions = {
-  masculino: avatarHombre,
-  femenino: avatarMujer,
-  otro: avatarOtro,
-};
-
-
+// Componente principal de registro de usuario
 function RegisterForm() {
+  // Estados para el formulario y control de errores, éxito y visualización
   const [form, setForm] = useState({
     nombre: "",
     apellido: "",
@@ -59,25 +58,32 @@ function RegisterForm() {
   });
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
-  const [mostrarPassword, setMostrarPassword] = useState(false);
   const [fueEnviado, setFueEnviado] = useState(false);
+  const [mostrarPassword, setMostrarPassword] = useState(false);
+  const [toastVisible, setToastVisible] = useState(false);
 
+  // Función para mostrar el toast animado al registrar con éxito
+  const mostrarToast = () => {
+    setToastVisible(true);
+    setTimeout(() => {
+      setToastVisible(false);
+    }, 2500);
+  };
 
-  
-
-  // Actualiza el formulario al escribir
+  // Maneja los cambios en los inputs del formulario
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" });
     setSuccess(false);
   };
 
-  // Valida todos los campos al enviar
+  // Maneja el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFueEnviado (true);
+    setFueEnviado(true);
     const nuevosErrores = {};
 
+    // Validaciones para cada campo
     const errorNombre = validarNombre(form.nombre);
     if (errorNombre) nuevosErrores.nombre = errorNombre;
 
@@ -92,51 +98,59 @@ function RegisterForm() {
 
     setErrors(nuevosErrores);
 
+    // Si no hay errores, muestra éxito, resetea el formulario y el toast
     if (Object.keys(nuevosErrores).length === 0) {
       setSuccess(true);
+      setFueEnviado(false);
+      mostrarToast();
       setForm({
         nombre: "",
         apellido: "",
         email: "",
         password: "",
-        genero: form.genero, // Mantiene el género seleccionado
+        genero: form.genero,
       });
     } else {
       setSuccess(false);
     }
   };
 
+  // Renderiza el formulario
   return (
     <form onSubmit={handleSubmit} className="register-form">
       <h2>Registro de Usuario</h2>
 
+      {/* Avatar según género */}
       <div style={{ textAlign: "center" }}>
         <img
-        src={avatarOptions[form.genero]}
-        alt="Avatar"
-        style={{ width: "150px", height: "100px", borderRadius: "50%" }}
+          src={avatarOptions[form.genero]}
+          alt="Avatar"
+          style={{
+            width: "110px",
+            height: "110px",
+            borderRadius: "50%",
+            objectFit: "cover",
+          }}
         />
-    </div>
+      </div>
 
-
+      {/* Campo Nombre */}
       <label>
         Nombre:
         <input
-            type="text"
-            name="nombre"
-            value={form.nombre}
-            onChange={handleChange}
-            autoComplete="off"
-            className={errors.nombre ? "input-error" : ""}
-                    />
+          type="text"
+          name="nombre"
+          value={form.nombre}
+          onChange={handleChange}
+          autoComplete="off"
+          className={errors.nombre ? "input-error" : ""}
+        />
         <small className="hint">* Solo letras, mínimo 2 caracteres.</small>
-        {errors.nombre && (
-            <span className="error">{errors.nombre}</span>
-        )}
-        </label>
-        <br />
+        {errors.nombre && <span className="error">{errors.nombre}</span>}
+      </label>
+      <br />
 
-
+      {/* Campo Apellido */}
       <label>
         Apellido:
         <input
@@ -148,12 +162,11 @@ function RegisterForm() {
           className={errors.apellido ? "input-error" : ""}
         />
         <small className="hint">* Solo letras, mínimo 2 caracteres.</small>
-        {errors.apellido && (
-          <span className="error">{errors.apellido}</span>
-        )}
+        {errors.apellido && <span className="error">{errors.apellido}</span>}
       </label>
       <br />
 
+      {/* Campo Email */}
       <label>
         Email:
         <input
@@ -164,54 +177,49 @@ function RegisterForm() {
           autoComplete="off"
           className={errors.email ? "input-error" : ""}
         />
-        <small className="hint">* Debe contener @ y dominio. Ejemplo: usuario@dominio.com</small>
-        {errors.email && (
-          <span className="error">{errors.email}</span>
-        )}
+        <small className="hint">
+          * Debe contener @ y dominio. Ejemplo: usuario@dominio.com
+        </small>
+        {errors.email && <span className="error">{errors.email}</span>}
       </label>
       <br />
 
+      {/* Campo Contraseña */}
       <label>
         Contraseña:
         <div style={{ display: "flex", alignItems: "center" }}>
-        <input
+          <input
             type={mostrarPassword ? "text" : "password"}
             name="password"
             value={form.password}
             onChange={handleChange}
             className={errors.password ? "input-error" : ""}
             style={{ flex: 1 }}
-            />
-    
-        <button
+          />
+          <button
             type="button"
             onClick={() => setMostrarPassword((prev) => !prev)}
             style={{
-            marginLeft: "8px",
-            padding: "4px 10px",
-            fontSize: "0.95rem",
-            cursor: "pointer",
-            borderRadius: "6px",
-            border: "1px solid #aaa",
-            background: "#f7f7f7"
+              marginLeft: "8px",
+              padding: "6px 12px",
+              fontSize: "0.95rem",
+              cursor: "pointer",
+              borderRadius: "6px",
+              border: "1px solid #aaa",
+              background: "#f7f7f7",
             }}
-            >
-        {mostrarPassword ? "Ocultar" : "Mostrar"}
-        </button>
+          >
+            {mostrarPassword ? "Ocultar" : "Mostrar"}
+          </button>
         </div>
-  
-  <small className="hint">
-    * Mín. 8 caracteres, al menos 1 mayúscula, 1 minúscula, 1 número y 1 símbolo.
-    </small>
-    {errors.password && (
-        <span className="error">{errors.password}</span>
-        )}
-        </label>
-        <br />
+        <small className="hint">
+          * Mín. 8 caracteres, al menos 1 mayúscula, 1 minúscula, 1 número y 1 símbolo.
+        </small>
+        {errors.password && <span className="error">{errors.password}</span>}
+      </label>
+      <br />
 
-
-        
-
+      {/* Selector Género */}
       <label>
         Género:
         <select
@@ -226,19 +234,30 @@ function RegisterForm() {
       </label>
       <br />
 
+      {/* Botón de registro */}
       <button type="submit">Registrarse</button>
 
+      {/* Mensaje de éxito */}
       {success && (
         <p style={{ color: "green" }}>¡Registro exitoso!</p>
       )}
+
+      {/* Mensaje de error */}
       {fueEnviado && Object.values(errors).length > 0 && !success && (
         <p style={{ color: "red" }}>
-        Revisa los campos marcados en rojo.
+          Revisa los campos marcados en rojo.
         </p>
       )}
 
+      {/* Toast flotante */}
+      {toastVisible && (
+        <div className="toast-exito">
+          ¡Registro exitoso!
+        </div>
+      )}
     </form>
   );
 }
 
+// Exporta el componente para usarlo en App.js
 export default RegisterForm;
