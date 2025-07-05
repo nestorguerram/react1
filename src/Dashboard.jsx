@@ -35,7 +35,7 @@ function Dashboard() {
           cursor: "pointer"
         }}
       >
-        Cerrar sesión
+        Comencemos a navegar
       </button>
     </div>
   );
