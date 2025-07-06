@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import avatarHombre from "./assets/hombre.png";
+import avatarMujer from "./assets/mujer.png";
+import avatarOtros from "./assets/otro.png";
+
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
@@ -115,6 +119,18 @@ function RegisterForm() {
     <form className="register-form" onSubmit={handleSubmit} noValidate>
       <h2 style={{ textAlign: "center", marginBottom: 16 }}>Registro</h2>
 
+      <div style={{ textAlign: "center", margin: "10px 0" }}>
+        {form.genero === "masculino" && (
+          <img src={avatarHombre} alt="Avatar hombre" width={80} />
+        )}
+        {form.genero === "femenino" && (
+          <img src={avatarMujer} alt="Avatar mujer" width={140} />
+        )}
+        {form.genero === "otro" && (
+          <img src={avatarOtros} alt="Avatar otro" width={80} />
+        )}
+      </div>
+
       <label>
         Nombre:
         <input
@@ -193,6 +209,9 @@ function RegisterForm() {
           <option value="otro">Otro</option>
         </select>
       </label>
+
+      
+
 
       <button type="submit" className="register-btn">
         Registrarse
