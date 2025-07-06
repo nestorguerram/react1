@@ -1,6 +1,7 @@
 // src/Home.jsx
 import React from "react";
-//import logo from "./logo.svg";
+import logo from "./assets/logo.svg"; // Asegúrate de que la ruta sea correcta
+import "./App.css"; // Asegúrate de tener un archivo CSS para los estilos
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Home() {
@@ -22,13 +23,14 @@ function Home() {
       
 
       <img
-        src="/logo192.png"
-         alt="Logo React PNG"
+        src={logo}
+         alt="Logo React svg"
          className="logo-spin"
          width={120}
          style={{ marginBottom: 20 }}
         />
 
+        
 
 
       <h1>¡Bienvenido a React, {nombre}!</h1>
