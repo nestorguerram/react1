@@ -47,30 +47,30 @@ function LoginForm() {
       <form className="login-form" onSubmit={handleSubmit}>
         <h2 style={{ textAlign: "center", marginBottom: 16 }}>Iniciar Sesión</h2>
 
-        <label>
-          Email:
+        <label style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", width: "100%" }}>
+          <span style={{ width: 100, textAlign: "left", marginRight: 10 }}>Email:</span>
           <input
-            type="text"
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
-            autoComplete="off"
-            placeholder="Ingrese su usuario formato ejemplo@email.com"
-            className={error && !user ? "input-error" : ""}
-          />
-        </label>
-
-        <div className="input-row">
-          <label style={{ flex: 1 }}>
-            Contraseña:
-            <input
-              type="password"
-              value={pass}
-              onChange={(e) => setPass(e.target.value)}
-              placeholder="Ingrese su contraseña"
-              className={error && !pass ? "input-error" : ""}
+              type="text"
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
+              autoComplete="off"
+              placeholder="Ingrese su usuario formato ejemplo@email.com"
+              className={error && !user ? "input-error" : ""}
             />
           </label>
-        </div>
+
+          <div className="input-row" style={{ alignItems: "flex-end" }}>
+            <label style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", flex: 1, width: "100%" }}>
+              <span style={{ width: 100, textAlign: "left", marginRight: 10 }}>Contraseña:</span>
+              <input
+                type="password"
+                value={pass}
+                onChange={(e) => setPass(e.target.value)}
+                placeholder="Ingrese su contraseña"
+                className={error && !pass ? "input-error" : ""}
+              />
+            </label>
+          </div>
 
         <div style={{ display: "flex", justifyContent: "center", gap: "12px", marginTop: "16px" }}>
           <button type="submit">Entrar</button>
@@ -84,7 +84,7 @@ function LoginForm() {
             <div>{error}</div>
             {error === "El usuario no existe." && (
               <>
-                <div style={{ marginTop: 7 }}>Si no tienes cuenta, puedes registrarte</div>
+                <div style={{ marginTop: 7 }}>Si no tienes cuenta, registrarte aqui </div>
                 <button
                   type="button"
                   onClick={() => navigate("/register")}
