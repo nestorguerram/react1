@@ -68,11 +68,9 @@ function RegisterForm() {
     e.preventDefault();
     setFueEnviado(true);
 
-    const nombreCompleto = form.nombre + " " + form.apellido;  // Construir nombre completo
-
-    localStorage.setItem("nombreUsuario", nombreCompleto);     // Guardar en localStorage
-
-    navigate("/home", { state: { nombre: nombreCompleto } }); // Navegar pasando nombre completo
+    //const nombreCompleto = form.nombre + " " + form.apellido;  // Construir nombre completo
+    //localStorage.setItem("nombreUsuario", nombreCompleto);     // Guardar en localStorage
+    //navigate("/home", { state: { nombre: nombreCompleto } }); // Navegar pasando nombre completo
 
 
     // Validar campos
@@ -100,14 +98,16 @@ function RegisterForm() {
         genero: form.genero,
       });
       localStorage.setItem("usuarios", JSON.stringify(usuarios));
-      localStorage.setItem("nombreUsuario", form.nombre + " " + form.apellido); // <-- línea mejorada
- // <-- AGREGAR AQUÍ
+      //localStorage.setItem("nombreUsuario", form.nombre + " " + form.apellido); // <-- línea mejorada
+      
 
       setSuccess(true);
       setFueEnviado(false);
       mostrarToast();
-      navigate("/home", { state: { nombre: form.nombre } }); //redireccionar a Home después del registro exitoso
-      
+      //navigate("/home", { state: { nombre: form.nombre } }); //redireccionar a Home después del registro exitoso
+      const nombreCompleto = form.nombre + " " + form.apellido;
+      navigate("/home", { state: { nombre: nombreCompleto } });
+
       setForm({
         nombre: "",
         apellido: "",
