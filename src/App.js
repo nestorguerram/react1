@@ -5,6 +5,7 @@ import RegisterForm from "./RegisterForm";
 import LoginForm from "./LoginForm";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
+import Manual from "./Manual"; 
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/manual" element={<Manual />} />
       </Routes>
     </BrowserRouter>
   );

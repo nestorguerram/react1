@@ -36,7 +36,7 @@ function Home() {
       <h1>¡Bienvenido a React, {nombre}!</h1>
       <p>Has registrado exitosamente tu cuenta. Ya puedes usar el sistema.</p>
       <button
-        onClick={() => navigate("/login")}
+        onClick={() => navigate("/manual")}
         style={{
           padding: "10px 30px",
           borderRadius: 8,
