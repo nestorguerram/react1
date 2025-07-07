@@ -118,13 +118,12 @@
 .error {
   
   font-size: 0.97em;
-  margin-top: -6px;
+  margin-top: 2px;
   margin-bottom: 5px;
   color: red;
   text-align: left;
   display: block;
-  margin-top: 2px;
-}
+  }
 
 body {
   font-family: Arial, sans-serif;

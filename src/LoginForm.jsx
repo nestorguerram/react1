@@ -32,8 +32,14 @@ function LoginForm() {
     }
 
     setError("");
-    localStorage.setItem("nombreUsuario", usuario.nombre + " " + usuario.apellido);
-    navigate("/dashboard", { state: { user } });
+    const nombreCompleto = usuario.nombre + " " + usuario.apellido;
+    localStorage.setItem("nombreUsuario", nombreCompleto);
+    navigate("/dashboard", { state: { user: nombreCompleto } });
+
+
+    navigate("/dashboard", { state: { user: nombreCompleto } });
+
+
   };
 
   return (

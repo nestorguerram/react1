@@ -9,7 +9,7 @@ function Home() {
   const navigate = useNavigate();
   const nombre = location.state?.nombre || localStorage.getItem("nombreUsuario") || "Usuario";
 
-  <h1>¡Bienvenido a React, {nombre}!</h1>
+  //<h1>¡Bienvenido a React, {nombre}!</h1>
 
 
   return (
