@@ -16,7 +16,7 @@ Fue lanzada en 2013 y desarrollada inicialmente por el equipo de Facebook. Actua
 
 React sigue el paradigma de programación declarativo y está basado en componentes individuales que pueden interactuar entre sí.
 
-Su funcionamiento se basa en "estados" que permiten actualizar y repintar solo los elementos necesarios en la interfaz. Se puede utilizar tanto para crear aplicaciones frontend web como backend con Node.js, o incluso para aplicaciones móviles.
+Su funcionamiento se basa en "estados" que permiten actualizar y "retocar" solo los elementos necesarios en la interfaz. Se puede utilizar tanto para crear aplicaciones frontend web como backend con Node.js, o incluso para aplicaciones móviles.
 
 ## Lenguaje de Programación Necesario
 
@@ -110,7 +110,7 @@ Estas plataformas permiten tener la aplicación en producción accesible en lín
 
 ## Estructura de este Proyecto Web en React
 
-La estructura de la carpeta principal de nuestro proyecto React llamado react1 se organiza de la siguiente manera:
+La estructura de la carpeta principal de nuestro proyecto React llamado react se organiza de la siguiente manera:
 
 ### Directorios principales
 
@@ -136,7 +136,7 @@ La estructura de la carpeta principal de nuestro proyecto React llamado react1 s
 
 Dentro de la carpeta `src`, donde reside el núcleo de la aplicación React, se organiza el proyecto de la siguiente forma:
 
-- `assets`: Carpeta dedicada a almacenar los recursos gráficos y multimedia usados en la aplicación, como imágenes. En este proyecto, contiene archivos como `background.png`, `hombre.png`, `mujer.png`, `otro.png` y `logo.svg`.
+- `assets`: Carpeta dedicada a almacenar los recursos gráficos y multimedia usados en la aplicación, como imágenes. En este proyecto, contiene archivos como `background.png`, `hombre.png`, `mujer.png`, `otro.png` y `logo.svg`, etc .
 
 - Archivos de estilos CSS:
 
@@ -160,11 +160,13 @@ Dentro de la carpeta `src`, donde reside el núcleo de la aplicación React, se 
 
   - `reportWebVitals.js`: Archivo para medir el rendimiento de la aplicación, siguiendo las recomendaciones oficiales de React.
 
+  - `Manual.jsx`: es una página informativa y estática que presenta un tutorial sobre React, con estilo visual
+
 Esta descripción aporta claridad sobre cómo está organizado el proyecto, facilitando su comprensión y mantenimiento.
 
 # Proyecto React
 
-## Objetivo del proyecto
+## Objetivo de este proyecto
 
 Es una aplicación web simple con autenticación de usuarios, donde puedes:
 
@@ -206,7 +208,7 @@ Es una aplicación web simple con autenticación de usuarios, donde puedes:
 
 - Al iniciar sesión, si es correcto, se redirige a /dashboard con mensaje personalizado.
 
-- Desde dashboard, puede continuar a home o cerrar sesión.
+- Desde dashboard, puede continuar a home o ir a una pequeña descripción.
 
 ---
 
