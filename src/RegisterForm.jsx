@@ -148,7 +148,10 @@ function RegisterForm() {
           placeholder="Nombre"
           className={fueEnviado && errors.nombre ? "input-error" : ""}
         />
-        <small>Al menos 2 letras, sin números.</small>
+        
+          <small className="info-text">Al menos 2 letras, sin números.</small>
+
+        
         {fueEnviado && errors.nombre && (
           <span className="error">{errors.nombre}</span>
         )}
@@ -164,7 +167,7 @@ function RegisterForm() {
           placeholder="Apellido"
           className={fueEnviado && errors.apellido ? "input-error" : ""}
         />
-        <small>Al menos 2 letras, sin números.</small>
+          <small className="info-text">Al menos 2 letras, sin números.</small>
         {fueEnviado && errors.apellido && (
           <span className="error">{errors.apellido}</span>
         )}
@@ -180,7 +183,7 @@ function RegisterForm() {
           placeholder="ejemplo@mail.com"
           className={fueEnviado && errors.email ? "input-error" : ""}
         />
-        <small>Debe ser un email válido y único.</small>
+          <small className="info-text">Debe tener un formato válido, como ejemplo@correo.cl</small>
         {fueEnviado && errors.email && (
           <span className="error">{errors.email}</span>
         )}
@@ -196,7 +199,7 @@ function RegisterForm() {
           placeholder="Contraseña segura"
           className={fueEnviado && errors.password ? "input-error" : ""}
         />
-        <small>
+        <small className="info-text">
           Al menos 8 caracteres, 1 mayúscula, 1 minúscula, 1 número, 1 símbolo.
         </small>
         {fueEnviado && errors.password && (

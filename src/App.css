@@ -243,3 +243,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+
+.info-text {
+  color: rgba(0, 0, 0, 0.4);  /* color negro con 40% de opacidad */
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
