@@ -1,28 +1,24 @@
-import RegisterForm from './RegisterForm';
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./LoginForm"; 
+
+import RegisterForm from "./RegisterForm";
 import LoginForm from "./LoginForm";
-
-import Dashboard from "./Home"; // <-- agrega esto arriba
-
-
-
-
-
+import Home from "./Home";
+import Dashboard from "./Dashboard";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />           {/* Página de inicio */}
-        <Route path="/register" element={<RegisterForm />} /> {/* Página de registro */}
-        <Route path="/login" element={<LoginForm />} />
+        {/* Mostrar LoginForm en la ruta raíz '/' */}
+        <Route path="/" element={<LoginForm />} />
+
+        {/* Definir ruta con mayúscula Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
-        //<Route path="/home" element={<Home />} />
 
-
-       
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

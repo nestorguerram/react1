@@ -68,6 +68,13 @@ function RegisterForm() {
     e.preventDefault();
     setFueEnviado(true);
 
+    const nombreCompleto = form.nombre + " " + form.apellido;  // Construir nombre completo
+
+    localStorage.setItem("nombreUsuario", nombreCompleto);     // Guardar en localStorage
+
+    navigate("/home", { state: { nombre: nombreCompleto } }); // Navegar pasando nombre completo
+
+
     // Validar campos
     const nuevosErrores = {};
     if (validarNombre(form.nombre)) nuevosErrores.nombre = validarNombre(form.nombre);

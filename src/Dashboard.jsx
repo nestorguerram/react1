@@ -22,7 +22,7 @@ function Dashboard() {
       <h2>¡Bienvenido, {user}!</h2>
       <p>Has iniciado sesión correctamente.</p>
       <button
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/home")}
         style={{
           marginTop: 18,
           padding: "10px 28px",
