@@ -45,7 +45,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #90d7e3;
+  /*background: #90d7e3;*/
 }
 
 .login-form {
@@ -229,4 +229,17 @@ body {
 
 .logo-spin {
   animation: spin 2s linear infinite;
+}
+
+
+
+.login-container {
+  background-image: url('/src/assets/background.png'); /* Cambia por la ruta real */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Que ocupe toda la pantalla */
+  display: flex;     /* Ya lo tienes, pero importante para centrar */
+  justify-content: center;
+  align-items: center;
 }

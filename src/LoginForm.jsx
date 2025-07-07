@@ -1,7 +1,8 @@
-// src/LoginForm.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
+import backgroundImage from "./assets/background.png";
+
 
 function LoginForm() {
   const [user, setUser] = useState("");
@@ -35,44 +36,80 @@ function LoginForm() {
     const nombreCompleto = usuario.nombre + " " + usuario.apellido;
     localStorage.setItem("nombreUsuario", nombreCompleto);
     navigate("/dashboard", { state: { user: nombreCompleto } });
-
-
-    navigate("/dashboard", { state: { user: nombreCompleto } });
-
-
   };
 
   return (
-    <div className="login-container">
+    <div
+      className="login-container"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <form className="login-form" onSubmit={handleSubmit}>
         <h2 style={{ textAlign: "center", marginBottom: 16 }}>Iniciar Sesión</h2>
 
-        <label style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", width: "100%" }}>
-          <span style={{ width: 100, textAlign: "left", marginRight: 10 }}>Email:</span>
+        <label
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          <span style={{ width: 100, textAlign: "left", marginRight: 10 }}>
+            Email:
+          </span>
           <input
-              type="text"
-              value={user}
-              onChange={(e) => setUser(e.target.value)}
-              autoComplete="off"
-              placeholder="Ingrese su usuario formato ejemplo@email.com"
-              className={error && !user ? "input-error" : ""}
+            type="text"
+            value={user}
+            onChange={(e) => setUser(e.target.value)}
+            autoComplete="off"
+            placeholder="Ingrese su usuario formato ejemplo@email.com"
+            className={error && !user ? "input-error" : ""}
+          />
+        </label>
+
+        <div
+          className="input-row"
+          style={{ alignItems: "flex-end", marginTop: "15px" }}
+        >
+          <label
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              flex: 1,
+              width: "100%",
+            }}
+          >
+            <span style={{ width: 100, textAlign: "left", marginRight: 10 }}>
+              Contraseña:
+            </span>
+            <input
+              type="password"
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
+              placeholder="Ingrese su contraseña"
+              className={error && !pass ? "input-error" : ""}
             />
           </label>
+        </div>
 
-          <div className="input-row" style={{ alignItems: "flex-end" }}>
-            <label style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", flex: 1, width: "100%" }}>
-              <span style={{ width: 100, textAlign: "left", marginRight: 10 }}>Contraseña:</span>
-              <input
-                type="password"
-                value={pass}
-                onChange={(e) => setPass(e.target.value)}
-                placeholder="Ingrese su contraseña"
-                className={error && !pass ? "input-error" : ""}
-              />
-            </label>
-          </div>
-
-        <div style={{ display: "flex", justifyContent: "center", gap: "12px", marginTop: "16px" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "12px",
+            marginTop: "16px",
+          }}
+        >
           <button type="submit">Entrar</button>
           <button type="button" onClick={() => navigate("/register")}>
             Registrarse
@@ -80,11 +117,16 @@ function LoginForm() {
         </div>
 
         {error && (
-          <div className="error" style={{ textAlign: "center", marginTop: 14 }}>
+          <div
+            className="error"
+            style={{ textAlign: "center", marginTop: 14 }}
+          >
             <div>{error}</div>
             {error === "El usuario no existe." && (
               <>
-                <div style={{ marginTop: 7 }}>Si no tienes cuenta, registrarte aqui </div>
+                <div style={{ marginTop: 7 }}>
+                  Si no tienes cuenta, registrarte aqui{" "}
+                </div>
                 <button
                   type="button"
                   onClick={() => navigate("/register")}
