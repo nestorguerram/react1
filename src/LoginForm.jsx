@@ -1,12 +1,15 @@
 // src/LoginForm.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "./App.css";
+
 
 function LoginForm() {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState("");
+  
   
   const navigate = useNavigate();
 
@@ -36,6 +39,13 @@ function LoginForm() {
       setError("Contraseña incorrecta.");
       return;
     }
+
+    
+
+
+
+
+
     // hasta aqui el login es exitoso
     setError("");
     localStorage.setItem("nombreUsuario", usuario.nombre + " " + usuario.apellido);
@@ -54,12 +64,14 @@ function LoginForm() {
             type="text"
             value={user}
             onChange={(e) => setUser(e.target.value)}
+            
+
             autoComplete="off"
             className={error && !user ? "input-error" : ""}
             placeholder="Ingrese su usuario formato ejemplo@email.com"
           />
         </label>
-        {/* Contraseña y botón en la misma fila */}
+        {/* Contraseña*/}
         <div className="input-row">
           <label style={{ flex: 1 }}>
             Contraseña:
@@ -67,29 +79,42 @@ function LoginForm() {
               type="password"
               value={pass}
               onChange={(e) => setPass(e.target.value)}
+              
               className={error && !pass ? "input-error" : ""}
               placeholder="Ingrese su contraseña"
             />
           </label>
-          <button type="submit">Entrar</button>
+          
+
+
         </div>
-        {error && (
-          <span className="error">
-            {error}
-            {error === "El usuario no existe." && (
-              <button
-                type="button"
-                onClick={() => navigate("/register")}
-                style={{
-                  marginLeft: 12,
-                  padding: "4px 10px",
-                  borderRadius: "5px",
-                  border: "1px solid #0072ff",
-                  background: "#f7f7ff",
-                  color: "#0072ff",
-                  fontWeight: "bold",
-                  cursor: "pointer"
-                }}
+        
+        <button type="submit">Entrar</button>
+            <button
+              type="button"
+              onClick={() => navigate("/register")}
+              style={{ marginLeft: 12 }}
+            >
+              Registrarse
+            </button>  
+
+            {error && (
+              <span className="error">
+              {error}
+              {error === "El usuario no existe." && (
+                <button
+                  type="button"
+                  onClick={() => navigate("/register")}
+                  style={{
+                    marginLeft: 12,
+                    padding: "4px 10px",
+                    borderRadius: "5px",
+                    border: "1px solid #0072ff",
+                    background: "#f7f7ff",
+                    color: "#0072ff",
+                    fontWeight: "bold",
+                    cursor: "pointer"
+                  }}
               >
                 Ir a registro
               </button>

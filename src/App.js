@@ -1,9 +1,10 @@
 import RegisterForm from './RegisterForm';
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home"; 
+import Home from "./LoginForm"; 
 import LoginForm from "./LoginForm";
-import Dashboard from "./Dashboard"; // <-- agrega esto arriba
+
+import Dashboard from "./Home"; // <-- agrega esto arriba
 
 
 
