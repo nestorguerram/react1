@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import fondomanual from "./assets/fondomanual.png"; // Ajusta la extensión si es diferente
+
 
 const markdown = `
 # Introducción y Primeros Pasos con React
@@ -37,7 +39,8 @@ Para crear tu primera aplicación con React necesitas:
 
 2. Un editor de código, siendo Visual Studio Code el más popular actualmente. Solo debes descargarlo e instalarlo.
 
-3. Crear un proyecto React usando el comando en la terminal \`npx create-react-app .\` ,  Ejecutado dentro del directorio donde deseas crear la app. Esto creará la estructura predeterminada de una aplicación React.
+3. Crear un proyecto React usando el comando en la terminal \`npx create-react-app .\` .  Ejecutado dentro del directorio donde deseas crear la app. 
+Esto creará la estructura predeterminada de una aplicación React.
 
 4. Usar npm para gestionar paquetes y ejecutar comandos. Por ejemplo, con \`npm start\` puedes iniciar un servidor local en \`localhost:3000\` para ver tu app en desarrollo.
 
@@ -231,24 +234,30 @@ Este tutorial básico sirve para aclarar dudas sobre cómo empezar con React des
 
 ## Información extraída de la web como:
 
-- https://www.w3schools.com/react/default.asp
+[https://www.w3schools.com/react/default.asp](https://www.w3schools.com/react/default.asp)  
+[https://www.hackaboss.com/blog/react-utilidad](https://www.hackaboss.com/blog/react-utilidad)
 
-- https://www.hackaboss.com/blog/react-utilidad
-`;
-
+`
 function Manual2() {
   const navigate = useNavigate();
 
   return (
     <div
-      style={{
-        padding: 20,
-        maxWidth: 900,
-        margin: "0 auto",
-        fontFamily: "Arial, sans-serif",
-        lineHeight: 1.6,
-      }}
-    >
+        style={{
+          padding: 20,
+          maxWidth: 900,
+          margin: "0 auto",
+          fontFamily: "Arial, sans-serif",
+          lineHeight: 1.6,
+          backgroundImage: `url(${fondomanual})`,
+          backgroundSize: "cover",        // Hace que la imagen cubra todo el contenedor
+          backgroundPosition: "center",   // Centra la imagen
+          backgroundRepeat: "no-repeat",  // Evita que la imagen se repita
+          minHeight: "100vh",              // Hace que el contenedor ocupe toda la altura visible de la ventana
+          color: "white",                  // Color del texto para buen contraste
+        }}
+      >
+
       <ReactMarkdown>{markdown}</ReactMarkdown>
       <button
         onClick={() => navigate("/")}
