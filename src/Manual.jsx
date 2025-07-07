@@ -24,9 +24,7 @@ Existen frameworks relacionados, como Next.js, que proporcionan herramientas adi
 Para crear tu primera aplicación con React necesitas:  
 1. Instalar Node.js, que está disponible para todos los sistemas operativos. Puedes comprobar la instalación correctamente ejecutando en la consola el comando \`node -v\`.  
 2. Un editor de código, siendo Visual Studio Code el más popular actualmente. Solo debes descargarlo e instalarlo.  
-3. Crear un proyecto React usando el comando en la terminal:  
-\`\`\`bash
-npx create-react-app .
+3. Crear un proyecto React usando el comando en la terminal:  - " npx create-react-app . "
 \`\`\`  
 ejecutado dentro del directorio donde deseas crear la app. Esto creará la estructura predeterminada de una aplicación React.  
 4. Usar npm para gestionar paquetes y ejecutar comandos. Por ejemplo, con \`npm start\` puedes iniciar un servidor local en \`localhost:3000\` para ver tu app en desarrollo.
