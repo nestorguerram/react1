@@ -48,7 +48,7 @@ function Home() {
           cursor: "pointer"
         }}
       >
-        Ir al inicio de sesión
+        Continuar al Manual
       </button>
     </div>
   );
