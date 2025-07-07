@@ -1,7 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import fondomanual from "./assets/fondomanual.png"; // Ajusta la extensión si es diferente
+import fondomanual from "./assets/fondomanual.png"; // fondo
+import ScrollToBottomButton from "./components/ScrollToBottomButton";
+
 
 
 const markdown = `
@@ -68,6 +70,33 @@ Por ejemplo, puedes crear un archivo \`Component.jsx\` con un componente básico
 
 Para trabajar cómodamente con React, se recomienda instalar extensiones de Visual Studio Code como snippets para crear componentes rápidamente con atajos.
 
+
+## Uso de Components en este Proyecto
+
+En este proyecto, la aplicación está organizada en múltiples componentes React, que son bloques reutilizables e independientes de código que representan partes específicas de la interfaz de usuario.  
+Cada componente se encuentra como un archivo separado dentro de la carpeta \`src/components/\` (o directamente en \`src/\` para componentes simples), por ejemplo:  
+- \`LoginForm.jsx\`: contiene el formulario para iniciar sesión.  
+- \`RegisterForm.jsx\`: contiene el formulario para registro de nuevos usuarios.  
+- \`Dashboard.jsx\`: muestra la pantalla principal tras iniciar sesión.  
+- \`Home.jsx\`: muestra la bienvenida después de registrar un usuario.  
+- \`Manual.jsx\`: presenta la documentación en formato Markdown.  
+- \`ScrollToBottomButton.jsx\`: botón reutilizable para desplazarse rápidamente al final de la página.
+
+Esta estructura modular permite:  
+- Reutilizar código y evitar duplicación.  
+- Facilitar la lectura y mantenimiento del código.  
+- Trabajar en equipo, donde diferentes personas pueden trabajar en diferentes componentes.  
+- Mejorar la escalabilidad del proyecto, permitiendo agregar, modificar o eliminar componentes sin afectar el resto.
+
+Cada componente puede tener su propio estado interno, manejar eventos y recibir propiedades (props) para personalizar su comportamiento o apariencia.
+
+Al importar y usar componentes en otros archivos, se construye la interfaz de la aplicación de forma clara, ordenada y mantenible.
+
+---
+
+Es recomendable mantener la organización clara, colocando los componentes en carpetas específicas (\`components/\`, \`pages/\`, etc.) según su función, para mantener la escalabilidad y limpieza del proyecto.
+
+
 ## Manejo de Estado y Eventos
 
 React utiliza estados para detectar qué partes del componente deben actualizarse cuando cambia la información.
@@ -122,7 +151,7 @@ Dentro de la carpeta \`src\`, donde reside el núcleo de la aplicación React, s
 
 - Archivos de estilos CSS:
 
-  - \`App.css\`: Estilos específicos para el componente principal \`App.js\`.
+  - App.css : Estilos específicos para el componente principal \`App.js\`.
 
   - \`index.css\`: Estilos globales que afectan toda la aplicación.
 
@@ -144,7 +173,7 @@ Dentro de la carpeta \`src\`, donde reside el núcleo de la aplicación React, s
 
 Esta descripción aporta claridad sobre cómo está organizado el proyecto, facilitando su comprensión y mantenimiento.
 
-# Proyecto React1
+# Proyecto React
 
 ## Objetivo del proyecto
 
@@ -238,27 +267,33 @@ Este tutorial básico sirve para aclarar dudas sobre cómo empezar con React des
 [https://www.hackaboss.com/blog/react-utilidad](https://www.hackaboss.com/blog/react-utilidad)
 
 `
-function Manual2() {
+function Manual() {
   const navigate = useNavigate();
 
   return (
     <div
-        style={{
-          padding: 20,
-          maxWidth: 900,
-          margin: "0 auto",
-          fontFamily: "Arial, sans-serif",
-          lineHeight: 1.6,
-          backgroundImage: `url(${fondomanual})`,
-          backgroundSize: "cover",        // Hace que la imagen cubra todo el contenedor
-          backgroundPosition: "center",   // Centra la imagen
-          backgroundRepeat: "no-repeat",  // Evita que la imagen se repita
-          minHeight: "100vh",              // Hace que el contenedor ocupe toda la altura visible de la ventana
-          color: "white",                  // Color del texto para buen contraste
-        }}
-      >
+      style={{
+        padding: 20,
+        maxWidth: 900,
+        margin: "0 auto",
+        fontFamily: "Arial, sans-serif",
+        lineHeight: 1.6,
+        backgroundImage: `url(${fondomanual})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+        color: "white",
+        position: "relative",
+      }}
+    >
+      {/* Botón de scroll al final, con borde rojo para visibilidad */}
+      <div style={{ marginBottom: 20,borderRadius: 5, padding: 5, maxWidth: 200, textAlign: "left" }}>
+        <ScrollToBottomButton />
+      </div>
 
       <ReactMarkdown>{markdown}</ReactMarkdown>
+
       <button
         onClick={() => navigate("/")}
         style={{
@@ -270,6 +305,9 @@ function Manual2() {
           borderRadius: 5,
           cursor: "pointer",
           fontWeight: "bold",
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
         }}
       >
         Ir al inicio de sesión
@@ -278,4 +316,4 @@ function Manual2() {
   );
 }
 
-export default Manual2;
+export default Manual;
