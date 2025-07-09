@@ -1,0 +1,44 @@
+/* Manual.css */
+
+/* Contenedor principal del manual con fondo y estilos tipográficos */
+.manual-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 15px 5px rgba(0, 191, 255, 0.7);
+ } /* Sombra para efecto luz */
+
+  /* La imagen de fondo se puede aplicar dinámicamente en JSX */
+
+
+/* Contenedor del botón ScrollToBottomButton */
+.scroll-button-wrapper {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 5px;
+  max-width: 200px;
+  text-align: left;
+}
+
+/* Botón para volver al inicio */
+.manual-back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

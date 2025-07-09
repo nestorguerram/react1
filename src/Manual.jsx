@@ -1,11 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import fondomanual from "./assets/fondomanual.png"; // fondo
-import ScrollToBottomButton from "./components/ScrollToBottomButton";
+import { useNavigate } from "react-router-dom";
+import fondomanual from "./assets/fondomanual.png"; // Imagen de fondo importada
+import ScrollToBottomButton from "./components/ScrollToBottomButton"; // Botón para ir al final
+import "./Manual.css"; // Importamos estilos externos
 
-
-
+// Contenido Markdown que se mostrará en la página
 const markdown = `
 # Introducción y Primeros Pasos con React
 
@@ -153,6 +153,9 @@ Dentro de la carpeta \`src\`, donde reside el núcleo de la aplicación React, s
 
   - App.css : Estilos específicos para el componente principal \`App.js\`.
 
+  - xxxx.css: Estilos globales que afectan toda la aplicación.
+  
+
   - \`index.css\`: Estilos globales que afectan toda la aplicación.
 
 - Archivos JavaScript y JSX (componentes y lógica):
@@ -173,7 +176,7 @@ Dentro de la carpeta \`src\`, donde reside el núcleo de la aplicación React, s
 
 Esta descripción aporta claridad sobre cómo está organizado el proyecto, facilitando su comprensión y mantenimiento.
 
-# Proyecto React
+# En Este Proyecto React
 
 ## Objetivo del proyecto
 
@@ -204,6 +207,8 @@ Es una aplicación web simple con autenticación de usuarios, donde puedes:
 - \`Home.jsx\`: página de bienvenida post registro con mensaje personalizado y botón para volver al login.
 
 - \`App.js\`: configuración de rutas usando React Router para navegar entre los componentes según la URL.
+
+- \`xxx.css\`: de cada uno de los archivos jsx ,nos permite la modularidad, mantenimiento, claridad, escalabilidad, organización, performance y carga, de cada uno de los estilos de los distintos componentes jsx
 
 ---
 
@@ -266,49 +271,28 @@ Este tutorial básico sirve para aclarar dudas sobre cómo empezar con React des
 [https://www.w3schools.com/react/default.asp](https://www.w3schools.com/react/default.asp)  
 [https://www.hackaboss.com/blog/react-utilidad](https://www.hackaboss.com/blog/react-utilidad)
 
-`
+`;
+
 function Manual() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook para navegar entre rutas
 
   return (
     <div
-      style={{
-        padding: 20,
-        maxWidth: 900,
-        margin: "0 auto",
-        fontFamily: "Arial, sans-serif",
-        lineHeight: 1.6,
-        backgroundImage: `url(${fondomanual})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        minHeight: "100vh",
-        color: "white",
-        position: "relative",
-      }}
+      className="manual-container"
+      style={{ backgroundImage: `url(${fondomanual})` }} // Imagen fondo en estilo inline
     >
-      {/* Botón de scroll al final, con borde rojo para visibilidad */}
-      <div style={{ marginBottom: 20,borderRadius: 5, padding: 5, maxWidth: 200, textAlign: "left" }}>
+      {/* Botón para hacer scroll hasta el final */}
+      <div className="scroll-button-wrapper">
         <ScrollToBottomButton />
       </div>
 
+      {/* Renderizado del contenido Markdown */}
       <ReactMarkdown>{markdown}</ReactMarkdown>
 
+      {/* Botón para volver al inicio */}
       <button
         onClick={() => navigate("/")}
-        style={{
-          marginTop: 20,
-          padding: "10px 20px",
-          backgroundColor: "#1976d2",
-          color: "white",
-          border: "none",
-          borderRadius: 5,
-          cursor: "pointer",
-          fontWeight: "bold",
-          display: "block",
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
+        className="manual-back-button"
       >
         Ir al inicio de sesión
       </button>
