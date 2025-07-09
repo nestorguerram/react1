@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./App.css";
+import "./LoginForm.css";
+//import "./App.css";
 import backgroundImage from "./assets/background.png";
 
 
@@ -107,13 +108,21 @@ function LoginForm() {
             display: "flex",
             justifyContent: "center",
             gap: "12px",
-            marginTop: "16px",
+            marginTop: "96px",
           }}
         >
-          <button type="submit">Entrar</button>
-          <button type="button" onClick={() => navigate("/register")}>
+          {/* Botón circular para "Entrar" */}
+          <button type="submit" className="circular-button">Entrar</button>
+
+          {/* Botón circular para "Registrarse" */}
+          <button
+            type="button"
+            onClick={() => navigate("/register")}
+            className="circular-button"
+          >
             Registrarse
           </button>
+        
         </div>
 
         {error && (

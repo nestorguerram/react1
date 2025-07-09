@@ -39,14 +39,7 @@
 
 
 /* desde aqui parte el codigo */
-/* Centrar vertical y horizontal */
-.login-container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*background: #90d7e3;*/
-}
+
 
 .login-form {
   background: rgba(0, 0, 0, 0.7) url('./assets/logo.svg') no-repeat center center;
@@ -91,26 +84,13 @@
 
 
 
-.login-form button {
-  background: #0b4e28;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 15px;
-  font-size: 1em;
-  cursor: pointer;
-  font-weight: bold;
-  margin-left: 12px;
-  text-align: center;
-  
-}
+
 
 .input-row {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-
 
 
 
@@ -178,13 +158,13 @@ body {
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
   margin-top: 12px;
 }
 
 .register-form button[type="submit"]:hover {
-  opacity: 0.85;
+  opacity: 0.5;
 }
 
 .hint {
@@ -255,3 +235,26 @@ body {
 }
 
 
+/*clase de boton de inicio */
+/* Clase para botones con forma circular y efecto de luz */
+.circular-button {
+  width: 80px;              /* Establece ancho fijo para que sea cuadrado */
+  height: 80px;             /* Alto igual al ancho para que sea un círculo */
+  border-radius: 50%;       /* Hace el borde redondo, creando un círculo */
+  border: 2px solid #00bfff; /* Borde azul claro que se ve brillante */
+  background-color: #0b4e28; /* Fondo verde oscuro */
+  color: white;             /* Texto blanco para buen contraste */
+  font-weight: bold;        /* Texto en negrita */
+  cursor: pointer;          /* Cambia cursor a mano cuando se pasa sobre el botón */
+  font-size: 0.8rem;          /* Tamaño de letra legible */
+  display: flex;            /* Usamos flexbox para centrar el texto dentro del botón */
+  justify-content: center;  /* Centra horizontalmente */
+  align-items: center;      /* Centra verticalmente */
+  box-shadow: 0 0 8px 2px #00bfff; /* Sombra difusa azul para dar efecto de luz */
+  transition: box-shadow 0.3s ease; /* Suaviza el cambio de sombra cuando hacemos hover */
+}
+
+/* Efecto al pasar el cursor (hover) */
+.circular-button:hover {
+  box-shadow: 0 0 14px 4px #00ffff; /* Sombra más intensa y amplia al pasar el mouse */
+}
