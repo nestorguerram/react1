@@ -1,53 +1,35 @@
-// src/Dashboard.jsx
 import React from "react";
+// Importamos hooks para obtener datos de navegación y para navegar programáticamente
 import { useLocation, useNavigate } from "react-router-dom";
+// Importamos la imagen que usaremos como fondo
 import react3d from "./assets/react3d.png";
+// Importamos el archivo CSS con los estilos específicos del Dashboard
+import "./Dashboard.css";
 
 function Dashboard() {
+  // useLocation nos permite acceder al estado que se pasó desde la navegación previa
   const location = useLocation();
+  // useNavigate nos da la función para cambiar de página
   const navigate = useNavigate();
+  // Extraemos el nombre de usuario del estado, o usamos "usuario" como valor por defecto
   const user = location.state?.user || "usuario";
 
   return (
+    // Contenedor principal del Dashboard con fondo dinámico usando inline style
     <div
-      style={{
-        minHeight: "100vh",                        // Ocupa toda la altura de la pantalla
-        backgroundImage: `url(${react3d})`,        // Imagen de fondo
-        backgroundSize: "cover",                    // La imagen cubre todo el fondo
-        backgroundPosition: "center",               // Centrada
-        backgroundRepeat: "no-repeat",              // No se repite
-        display: "flex",                            // Para centrar el cuadro
-        justifyContent: "center",                   // Centrado horizontal
-        alignItems: "center",                       // Centrado vertical
-        padding: 20,
-      }}
+      className="dashboard-container"
+      style={{ backgroundImage: `url(${react3d})` }}
     >
-      <div
-        style={{
-          maxWidth: 400,                            // Ancho máximo del cuadro
-          backgroundColor: "rgba(128,128,128,0.55)", // Fondo gris semi-transparente
-          padding: 30,                             // Espaciado interno
-          borderRadius: 16,                        // Bordes redondeados
-          boxShadow: "0 4px 18px #0002",          // Sombra para profundidad
-          color: "white",                          // Texto blanco
-          textAlign: "center",                     // Texto centrado
-        }}
-      >
+      {/* Cuadro central semi-transparente con contenido */}
+      <div className="dashboard-box">
+        {/* Título de bienvenida personalizado */}
         <h2>¡Bienvenido, {user}!</h2>
+        {/* Texto informativo */}
         <p>Has iniciado sesión correctamente.</p>
+        {/* Botón para navegar a la página principal "home" */}
         <button
+          className="dashboard-button"
           onClick={() => navigate("/home")}
-          style={{
-            marginTop: 18,
-            padding: "10px 28px",
-            background: "#1976d2",
-            color: "#fff",
-            border: "none",
-            borderRadius: 8,
-            fontSize: "1.07em",
-            fontWeight: "bold",
-            cursor: "pointer",
-          }}
         >
           Comencemos a navegar
         </button>

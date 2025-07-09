@@ -14,7 +14,7 @@
 
 /* Formulario de login con fondo semitransparente y sombra */
 .login-form {
-  background: rgba(0, 0, 0, 0.4) url('./assets/logo.svg') no-repeat center center;
+  background: rgba(0, 0, 0, 0.56) url('./assets/logo.svg') no-repeat center center;
   padding: 14px 36px;
   border-radius: 30px;
   box-shadow: 0 2px 16px white;

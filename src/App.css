@@ -40,73 +40,9 @@
 
 /* desde aqui parte el codigo */
 
+/* App.css */
 
-.login-form {
-  background: rgba(0, 0, 0, 0.7) url('./assets/logo.svg') no-repeat center center;
-  padding: 14px 36px;
-  border-radius: 24px;
-  box-shadow: 0 2px 16px white;
-  min-width: 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin: 0 auto;
-  color: white;
-}
-
-
-.login-form label {
-  font-size: 1.06em;
-  margin-bottom: 5px;
-  justify-content: flex-end;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
-  flex: none;                /* Esto es importante para que respete el ancho */
-  width: 200px;              /* El tamaño que tú quieras */
-  padding: 10px 8px;
-  border-radius: 15px;
-  border: 1.5px solid #b3b3b3;
-  font-size: 1em;
-  margin-top: 7px;
-  text-align: right;         /* El texto también a la derecha */
-}
-
-
-
-
-
-
-
-
-
-
-.input-row {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-
-
-.login-form button:hover {
-  background: #0b968b;
-}
-
-.error {
-  
-  font-size: 0.97em;
-  margin-top: 2px;
-  margin-bottom: 5px;
-  color: red;
-  text-align: left;
-  display: block;
-  }
+/* Estilos generales y globales */
 
 body {
   font-family: Arial, sans-serif;
@@ -117,6 +53,49 @@ body {
   text-align: center;
   margin-top: 40px;
 }
+
+/* Estilos para componentes y elementos fuera del login */
+
+/* Logo animado */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Animación giro logo */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header general */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* Links */
+.App-link {
+  color: #61dafb;
+}
+
+/* Formulario de registro (RegisterForm) */
 
 .register-form {
   max-width: 430px;
@@ -148,7 +127,6 @@ body {
   border: 1px solid gray;
   margin-bottom: 6px;
   font-size: 1rem;
-
 }
 
 .register-form button[type="submit"] {
@@ -167,6 +145,7 @@ body {
   opacity: 0.5;
 }
 
+/* Texto de ayuda */
 .hint {
   color: #888;
   font-size: 0.89rem;
@@ -174,9 +153,7 @@ body {
   display: block;
 }
 
-
-
-
+/* Toast para mensajes de éxito */
 .toast-exito {
   position: fixed;
   top: 40px;
@@ -202,7 +179,7 @@ body {
   to   { opacity: 1; top: 40px; }
 }
 
-
+/* Animación giro logo (repetida por si es usada en otro componente) */
 @keyframes spin {
   0% { transform: rotate(0deg);}
   100% { transform: rotate(360deg);}
@@ -210,51 +187,4 @@ body {
 
 .logo-spin {
   animation: spin 2s linear infinite;
-}
-
-
-
-.login-container {
-  background-image: url('/src/assets/background.png'); /* Cambia por la ruta real */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh; /* Que ocupe toda la pantalla */
-  display: flex;     /* Ya lo tienes, pero importante para centrar */
-  justify-content: center;
-  align-items: center;
-}
-
-
-.info-text {
-  color: rgba(0, 0, 0, 0.4);  /* color negro con 40% de opacidad */
-  font-size: 0.85rem;
-  display: block;
-  margin-top: 4px;
-  margin-bottom: 6px;
-}
-
-
-/*clase de boton de inicio */
-/* Clase para botones con forma circular y efecto de luz */
-.circular-button {
-  width: 80px;              /* Establece ancho fijo para que sea cuadrado */
-  height: 80px;             /* Alto igual al ancho para que sea un círculo */
-  border-radius: 50%;       /* Hace el borde redondo, creando un círculo */
-  border: 2px solid #00bfff; /* Borde azul claro que se ve brillante */
-  background-color: #0b4e28; /* Fondo verde oscuro */
-  color: white;             /* Texto blanco para buen contraste */
-  font-weight: bold;        /* Texto en negrita */
-  cursor: pointer;          /* Cambia cursor a mano cuando se pasa sobre el botón */
-  font-size: 0.8rem;          /* Tamaño de letra legible */
-  display: flex;            /* Usamos flexbox para centrar el texto dentro del botón */
-  justify-content: center;  /* Centra horizontalmente */
-  align-items: center;      /* Centra verticalmente */
-  box-shadow: 0 0 8px 2px #00bfff; /* Sombra difusa azul para dar efecto de luz */
-  transition: box-shadow 0.3s ease; /* Suaviza el cambio de sombra cuando hacemos hover */
-}
-
-/* Efecto al pasar el cursor (hover) */
-.circular-button:hover {
-  box-shadow: 0 0 14px 4px #00ffff; /* Sombra más intensa y amplia al pasar el mouse */
 }

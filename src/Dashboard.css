@@ -1,0 +1,37 @@
+/* Dashboard.css */
+
+/* Contenedor principal que ocupa toda la pantalla con imagen de fondo */
+.dashboard-container {
+  min-height: 100vh;
+  background-size: cover;        /* Imagen cubre todo el fondo */
+  background-position: center;   /* Imagen centrada */
+  background-repeat: no-repeat;  /* Sin repetición */
+  display: flex;                 /* Para centrar el cuadro interno */
+  justify-content: center;       /* Centrado horizontal */
+  align-items: center;           /* Centrado vertical */
+  padding: 20px;
+}
+
+/* Cuadro interno con fondo semi-transparente y sombra */
+.dashboard-box {
+  max-width: 400px;
+  background-color: rgba(128, 128, 128, 0.55); /* Gris semi-transparente */
+  padding: 30px;
+  border-radius: 16px;            /* Bordes redondeados */
+  box-shadow: 0 4px 18px #0002;   /* Sombra para profundidad */
+  color: white;                   /* Texto blanco */
+  text-align: center;             /* Texto centrado */
+}
+
+/* Botón estilizado */
+.dashboard-button {
+  margin-top: 18px;
+  padding: 10px 28px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.07em;
+  font-weight: bold;
+  cursor: pointer;
+}
