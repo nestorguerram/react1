@@ -1,9 +1,6 @@
-import React from "react";
-// Importamos hooks para obtener datos de navegación y para navegar programáticamente
-import { useLocation, useNavigate } from "react-router-dom";
-// Importamos la imagen que usaremos como fondo
-import react3d from "./assets/react3d.png";
-// Importamos el archivo CSS con los estilos específicos del Dashboard
+import React from "react";// Importamos hooks para obtener datos de navegación y para navegar programáticamente
+import { useLocation, useNavigate } from "react-router-dom"; // Importamos la imagen que usaremos como fondo
+import react3d from "./assets/react3d.png"; // Importamos el archivo CSS con los estilos específicos del Dashboard
 import "./Dashboard.css";
 
 function Dashboard() {

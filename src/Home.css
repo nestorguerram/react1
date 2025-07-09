@@ -1,0 +1,28 @@
+/* Home.css */
+
+/* Contenedor principal centrado con margen superior */
+.home-container {
+  text-align: center;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Imagen del logo con margen inferior */
+.home-logo {
+  margin-bottom: 20px;
+  width: 120px; /* Mantener tamaño consistente */
+}
+
+/* Botón estilizado */
+.home-button {
+  padding: 10px 30px;
+  border-radius: 8px;
+  background: #282c34;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  margin-top: 25px;
+  cursor: pointer;
+}

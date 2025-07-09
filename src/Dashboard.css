@@ -15,9 +15,9 @@
 /* Cuadro interno con fondo semi-transparente y sombra */
 .dashboard-box {
   max-width: 400px;
-  background-color: rgba(128, 128, 128, 0.55); /* Gris semi-transparente */
+  background-color: rgba(128, 128, 128, 0.45); /* Gris semi-transparente */
   padding: 30px;
-  border-radius: 16px;            /* Bordes redondeados */
+  border-radius: 76px;            /* Bordes redondeados */
   box-shadow: 0 4px 18px #0002;   /* Sombra para profundidad */
   color: white;                   /* Texto blanco */
   text-align: center;             /* Texto centrado */
