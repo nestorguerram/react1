@@ -6,6 +6,9 @@ import ScrollToBottomButton from "./components/ScrollToBottomButton"; // Botón 
 import "./Manual.css"; // Importamos estilos externos
 
 // Contenido Markdown que se mostrará en la página
+
+
+
 const markdown = `
 # Introducción y Primeros Pasos con React
 
@@ -159,7 +162,6 @@ Dentro de la carpeta \`src\`, donde reside el núcleo de la aplicación React, s
   - \`index.css\`: Estilos globales que afectan toda la aplicación.
 
 - Archivos JavaScript y JSX (componentes y lógica):
-
   - \`App.js\`: Componente raíz que organiza la estructura general y ruteo de la aplicación.
 
   - \`Dashboard.jsx\`: Componente que representa la vista o sección principal después del login.
@@ -176,7 +178,8 @@ Dentro de la carpeta \`src\`, donde reside el núcleo de la aplicación React, s
 
 Esta descripción aporta claridad sobre cómo está organizado el proyecto, facilitando su comprensión y mantenimiento.
 
-# En Este Proyecto React
+## En este Proyecto React <a id="proyecto-react"></a>
+
 
 ## Objetivo del proyecto
 
@@ -274,18 +277,18 @@ Este tutorial básico sirve para aclarar dudas sobre cómo empezar con React des
 `;
 
 function Manual() {
-  const navigate = useNavigate(); // Hook para navegar entre rutas
+  const navigate = useNavigate();
 
   return (
     <div
       className="manual-container"
-      style={{ backgroundImage: `url(${fondomanual})` }} // Imagen fondo en estilo inline
+      style={{ backgroundImage: `url(${fondomanual})` }}
     >
       {/* Botón para hacer scroll hasta el final */}
       <div className="scroll-button-wrapper">
         <ScrollToBottomButton />
       </div>
-
+        
       {/* Renderizado del contenido Markdown */}
       <ReactMarkdown>{markdown}</ReactMarkdown>
 

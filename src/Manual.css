@@ -12,6 +12,7 @@
   background-repeat: no-repeat;
   min-height: 100vh;
   color: white;
+  
   position: relative;
   box-shadow: 0 0 15px 5px rgba(0, 191, 255, 0.7);
  } /* Sombra para efecto luz */
@@ -28,17 +29,5 @@
   text-align: left;
 }
 
-/* Botón para volver al inicio */
-.manual-back-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+
+

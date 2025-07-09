@@ -12,6 +12,8 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.6.3",
     "react-scripts": "5.0.1",
+    "rehype-slug": "^6.0.0",
+    "remark-slug": "^7.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
