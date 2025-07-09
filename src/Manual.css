@@ -30,4 +30,24 @@
 }
 
 
+.manual-back-button {
+  display: block;
+  margin: 30px auto 0 auto; /* Más espacio arriba y centrado horizontal */
+  padding: 12px 24px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  /*font-weight: bold;*/
+  font-size: 0.9em;
+  cursor: pointer;
+  max-width: 190px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.manual-back-button:hover {
+  background-color: #145a9e;
+}
+
 
