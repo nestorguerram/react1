@@ -42,12 +42,16 @@
 .login-form input[type="text"],
 .login-form input[type="password"] {
   flex: none;                /* Evita que el input se estire en contenedor flex */
-  width: 200px;              /* Ancho fijo para inputs */
-  padding: 10px 8px;
+  width: 100px;              /* Ancho fijo para inputs */
+  
   border-radius: 15px;
   border: 1.5px solid #b3b3b3;
   font-size: 1em;
   margin-top: 7px;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  padding: 8px 30px 8px 8px; /* deja espacio a la derecha para el ícono ojo */
   text-align: right;         /* Texto alineado a la derecha */
 }
 
@@ -75,8 +79,8 @@
 
 /* Botones circulares con efecto de luz */
 .circular-button {
-  width: 90px;                 /* Tamaño fijo ancho */
-  height: 90px;                /* Tamaño fijo alto para círculo */
+  width: 85px;                 /* Tamaño fijo ancho */
+  height: 85px;                /* Tamaño fijo alto para círculo */
   border-radius: 50%;           /* Círculo perfecto */
   border: 2px solid #00bfff;    /* Borde azul claro */
   background-color: #0b4e28;   /* Fondo verde oscuro */
@@ -94,4 +98,10 @@
 /* Efecto sombra más intensa al pasar el mouse */
 .circular-button:hover {
   box-shadow: 0 0 14px 4px #00ffff;
+}
+
+
+.login-form input[type="text"] {
+  /*width: 250px; *//* o el ancho que necesites */
+  max-width: 250px /* para que no se salga en pantallas pequeñas */
 }

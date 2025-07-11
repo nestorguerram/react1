@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
-//import "./App.css";
 import backgroundImage from "./assets/background.png";
-
+import eyeIcon from "./assets/ojos.png"; // Asegúrate que la ruta y nombre sean correctos
 
 function LoginForm() {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
@@ -74,34 +74,49 @@ function LoginForm() {
             autoComplete="off"
             placeholder="Ingrese su usuario formato ejemplo@email.com"
             className={error && !user ? "input-error" : ""}
+            style={{ width: "100%" }}
           />
         </label>
 
-        <div
-          className="input-row"
-          style={{ alignItems: "flex-end", marginTop: "15px" }}
+        <label
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            width: "100%",
+            marginTop: "15px",
+          }}
         >
-          <label
-            style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              alignItems: "center",
-              flex: 1,
-              width: "100%",
-            }}
-          >
-            <span style={{ width: 100, textAlign: "left", marginRight: 10 }}>
-              Contraseña:
-            </span>
+          <span style={{ width: 100, textAlign: "left", marginRight: 10 }}>
+            Contraseña:
+          </span>
+
+          <div style={{ position: "relative", width: "250px" }}>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               value={pass}
               onChange={(e) => setPass(e.target.value)}
               placeholder="Ingrese su contraseña"
               className={error && !pass ? "input-error" : ""}
+              style={{ width: "100%", paddingRight: "40px" }}
             />
-          </label>
-        </div>
+            <img
+              src={eyeIcon}
+              alt={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+              onClick={() => setShowPassword(!showPassword)}
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: "24px",
+                height: "24px",
+                cursor: "pointer",
+                userSelect: "none",
+              }}
+            />
+          </div>
+        </label>
 
         <div
           style={{
@@ -111,10 +126,10 @@ function LoginForm() {
             marginTop: "96px",
           }}
         >
-          {/* Botón circular para "Entrar" */}
-          <button type="submit" className="circular-button">Entrar</button>
+          <button type="submit" className="circular-button">
+            Entrar
+          </button>
 
-          {/* Botón circular para "Registrarse" */}
           <button
             type="button"
             onClick={() => navigate("/register")}
@@ -122,14 +137,10 @@ function LoginForm() {
           >
             Registrarse
           </button>
-        
         </div>
 
         {error && (
-          <div
-            className="error"
-            style={{ textAlign: "center", marginTop: 14 }}
-          >
+          <div className="error" style={{ textAlign: "center", marginTop: 14 }}>
             <div>{error}</div>
             {error === "El usuario no existe." && (
               <>
