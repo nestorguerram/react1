@@ -4,10 +4,10 @@
   margin: 40px auto;
   padding: 25px;
   /*background: #9ee9e9;*/
-  border-radius: 10px;
-  box-shadow: 0 2px 8px #0001;
+  border-radius: 100px;
+  
   font-family: Arial, sans-serif;
-  color: #000;
+  color: black;
 }
 
 /* Título centrado */
