@@ -2,7 +2,7 @@
 
 
 body {
-  background-image: url('./assets/fondodereacgif.gif');
+  /*background-image: url('./assets/fondodereacgif.gif'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -11,17 +11,25 @@ body {
 
 /* Contenedor principal centrado con margen superior */
 .home-container {
+  background-image: url('./assets/fondodereacgif.gif');
   text-align: center;
-  margin-top: 80px;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgb(92, 176, 166)
+  color: rgb(235, 213, 23); /* rojo */
+  font-weight: bold;
+  font-size: 1.2em;
+  /*width: 100%;*/
+  height: 100vh;
+  background-size: cover;/* Ocupa toda la altura de la ventana */
 }
 
 .home-container p {
-  color: red; /* rojo */
   
+  color: rgb(194, 207, 226);
+  font-weight: bold;
+
 }
 /* Imagen del logo con margen inferior */
 .home-logo {
