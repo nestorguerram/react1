@@ -1,5 +1,14 @@
 /* Home.css */
 
+
+body {
+  background-image: url('./assets/fondodereacgif.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
 /* Contenedor principal centrado con margen superior */
 .home-container {
   text-align: center;
@@ -7,22 +16,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: rgb(92, 176, 166)
 }
 
+.home-container p {
+  color: red; /* rojo */
+  
+}
 /* Imagen del logo con margen inferior */
 .home-logo {
   margin-bottom: 20px;
-  width: 120px; /* Mantener tamaño consistente */
+  width: 180px; /* Mantener tamaño consistente */
 }
 
 /* Botón estilizado */
 .home-button {
   padding: 10px 30px;
   border-radius: 8px;
-  background: #6b8ac6;
+  background: #abbde0;
   color: #fff;
   border: none;
   font-weight: bold;
   margin-top: 25px;
   cursor: pointer;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo-spin {
+  animation: spin 2s linear infinite;
 }

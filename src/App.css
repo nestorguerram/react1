@@ -188,3 +188,8 @@ body {
 .logo-spin {
   animation: spin 2s linear infinite;
 }
+
+
+body {
+  cursor: default; /* o pointer, etc. */
+}

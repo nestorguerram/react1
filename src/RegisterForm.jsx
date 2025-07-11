@@ -4,10 +4,9 @@ import avatarMujer from "./assets/mujer.png";
 import avatarOtros from "./assets/otro.png";
 
 import { useNavigate } from "react-router-dom";
-import "./App.css";
+import "./RegisterForm.css";  // Importamos el CSS separado
 
 function RegisterForm() {
-  // Estado para los campos del formulario
   const [form, setForm] = useState({
     nombre: "",
     apellido: "",
@@ -16,15 +15,11 @@ function RegisterForm() {
     genero: "masculino",
   });
 
-  // Estado para los errores de validación
   const [errors, setErrors] = useState({});
-  // Estado para éxito, toast y envío
   const [success, setSuccess] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
   const [fueEnviado, setFueEnviado] = useState(false);
-  
 
-  // Funciones de validación de campos
   const navigate = useNavigate();
 
   const validarNombre = (valor) => {
@@ -43,44 +38,32 @@ function RegisterForm() {
     return "";
   };
   const validarPassword = (valor) => {
-    if (
-      !/^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}.*$/.test(valor)
-    ) {
+    if (!/^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}.*$/.test(valor)) {
       return "La contraseña debe tener 8 caracteres, al menos 1 mayúscula, 1 minúscula, 1 número y 1 símbolo.";
     }
     return "";
   };
 
-  // Manejo del cambio de campos
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" }); // Limpia el error del campo al escribir
+    setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  // Mostrar toast por 2 segundos
   const mostrarToast = () => {
     setToastVisible(true);
     setTimeout(() => setToastVisible(false), 2000);
   };
 
-  // Manejo de envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
     setFueEnviado(true);
 
-    //const nombreCompleto = form.nombre + " " + form.apellido;  // Construir nombre completo
-    //localStorage.setItem("nombreUsuario", nombreCompleto);     // Guardar en localStorage
-    //navigate("/home", { state: { nombre: nombreCompleto } }); // Navegar pasando nombre completo
-
-
-    // Validar campos
     const nuevosErrores = {};
     if (validarNombre(form.nombre)) nuevosErrores.nombre = validarNombre(form.nombre);
     if (validarApellido(form.apellido)) nuevosErrores.apellido = validarApellido(form.apellido);
     if (validarEmail(form.email)) nuevosErrores.email = validarEmail(form.email);
     if (validarPassword(form.password)) nuevosErrores.password = validarPassword(form.password);
 
-    // Validar email único en localStorage
     const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
     if (!nuevosErrores.email && usuarios.find(u => u.user === form.email)) {
       nuevosErrores.email = "El email ya está registrado.";
@@ -89,7 +72,6 @@ function RegisterForm() {
     setErrors(nuevosErrores);
 
     if (Object.keys(nuevosErrores).length === 0) {
-      // Guardar usuario en localStorage
       usuarios.push({
         user: form.email,
         password: form.password,
@@ -98,13 +80,11 @@ function RegisterForm() {
         genero: form.genero,
       });
       localStorage.setItem("usuarios", JSON.stringify(usuarios));
-      //localStorage.setItem("nombreUsuario", form.nombre + " " + form.apellido); // <-- línea mejorada
-      
 
       setSuccess(true);
       setFueEnviado(false);
       mostrarToast();
-      //navigate("/home", { state: { nombre: form.nombre } }); //redireccionar a Home después del registro exitoso
+
       const nombreCompleto = form.nombre + " " + form.apellido;
       navigate("/home", { state: { nombre: nombreCompleto } });
 
@@ -120,13 +100,11 @@ function RegisterForm() {
     }
   };
 
-
-
   return (
     <form className="register-form" onSubmit={handleSubmit} noValidate>
-      <h2 style={{ textAlign: "center", marginBottom: 16 }}>Registro</h2>
+      <h2 className="register-form-title">Registro</h2>
 
-      <div style={{ textAlign: "center", margin: "10px 0" }}>
+      <div className="avatar-container">
         {form.genero === "masculino" && (
           <img src={avatarHombre} alt="Avatar hombre" width={80} />
         )}
@@ -138,7 +116,7 @@ function RegisterForm() {
         )}
       </div>
 
-      <label>
+      <label className="form-label">
         Nombre:
         <input
           type="text"
@@ -148,16 +126,11 @@ function RegisterForm() {
           placeholder="Nombre"
           className={fueEnviado && errors.nombre ? "input-error" : ""}
         />
-        
-          <small className="info-text">Al menos 2 letras, sin números.</small>
-
-        
-        {fueEnviado && errors.nombre && (
-          <span className="error">{errors.nombre}</span>
-        )}
+        <small className="info-text">Al menos 2 letras, sin números.</small>
+        {fueEnviado && errors.nombre && <span className="error">{errors.nombre}</span>}
       </label>
 
-      <label>
+      <label className="form-label">
         Apellido:
         <input
           type="text"
@@ -167,13 +140,11 @@ function RegisterForm() {
           placeholder="Apellido"
           className={fueEnviado && errors.apellido ? "input-error" : ""}
         />
-          <small className="info-text">Al menos 2 letras, sin números.</small>
-        {fueEnviado && errors.apellido && (
-          <span className="error">{errors.apellido}</span>
-        )}
+        <small className="info-text">Al menos 2 letras, sin números.</small>
+        {fueEnviado && errors.apellido && <span className="error">{errors.apellido}</span>}
       </label>
 
-      <label>
+      <label className="form-label">
         Email:
         <input
           type="email"
@@ -183,13 +154,11 @@ function RegisterForm() {
           placeholder="ejemplo@mail.com"
           className={fueEnviado && errors.email ? "input-error" : ""}
         />
-          <small className="info-text">Debe tener un formato válido, como ejemplo@correo.cl</small>
-        {fueEnviado && errors.email && (
-          <span className="error">{errors.email}</span>
-        )}
+        <small className="info-text">Debe tener un formato válido, como ejemplo@correo.cl</small>
+        {fueEnviado && errors.email && <span className="error">{errors.email}</span>}
       </label>
 
-      <label>
+      <label className="form-label">
         Contraseña:
         <input
           type="password"
@@ -202,44 +171,27 @@ function RegisterForm() {
         <small className="info-text">
           Al menos 8 caracteres, 1 mayúscula, 1 minúscula, 1 número, 1 símbolo.
         </small>
-        {fueEnviado && errors.password && (
-          <span className="error">{errors.password}</span>
-        )}
+        {fueEnviado && errors.password && <span className="error">{errors.password}</span>}
       </label>
 
-      <label>
+      <label className="form-label">
         Género:
-        <select
-          name="genero"
-          value={form.genero}
-          onChange={handleChange}
-        >
+        <select name="genero" value={form.genero} onChange={handleChange} className="select-gender">
           <option value="masculino">Masculino</option>
           <option value="femenino">Femenino</option>
           <option value="otro">Otro</option>
         </select>
       </label>
 
-      
-
-
       <button type="submit" className="register-btn">
         Registrarse
       </button>
 
-      {/* Mensaje de error general */}
       {fueEnviado && Object.values(errors).length > 0 && !success && (
-        <p className="error" style={{ color: "red" }}>
-          Revisa los campos marcados en rojo.
-        </p>
+        <p className="error general-error">Revisa los campos marcados en rojo.</p>
       )}
 
-      {/* Toast flotante */}
-      {toastVisible && (
-        <div className="toast-exito">
-          ¡Registro exitoso!
-        </div>
-      )}
+      {toastVisible && <div className="toast-exito">¡Registro exitoso!</div>}
     </form>
   );
 }

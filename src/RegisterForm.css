@@ -1,0 +1,133 @@
+/* Contenedor del formulario */
+.register-form {
+  max-width: 430px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #9ee9e9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+/* Título centrado */
+.register-form-title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Contenedor para avatar */
+.avatar-container {
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* Etiquetas */
+.form-label {
+  display: block;
+  margin-bottom: 12px;
+  text-align: left;
+  font-weight: 500;
+}
+
+/* Inputs y selects */
+.register-form input,
+.register-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 3px;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Select género */
+.select-gender {
+  cursor: pointer;
+}
+
+/* Estilo para inputs con error */
+.input-error {
+  border-color: red;
+  background-color: #ffe6e6;
+}
+
+/* Texto pequeño de info */
+.info-text {
+  color: #888;
+  font-size: 0.89rem;
+  margin-left: 4px;
+  display: block;
+}
+
+/* Mensajes de error */
+.error {
+  font-size: 0.97em;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  color: red;
+  text-align: left;
+  display: block;
+}
+
+/* Error general */
+.general-error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Botón de registro */
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+  background: #155a9c;
+}
+
+/* Toast de éxito */
+.toast-exito {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #43a047;
+  color: white;
+  padding: 18px 35px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px #0002;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.6s, top 0.6s;
+  animation: toastAnim 0.6s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@keyframes toastAnim {
+  from {
+    opacity: 0;
+    top: 0px;
+  }
+  to {
+    opacity: 1;
+    top: 40px;
+  }
+}
