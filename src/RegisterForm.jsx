@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import avatarHombre from "./assets/hombre.png";
 import avatarMujer from "./assets/mujer.png";
 import avatarOtros from "./assets/otro.png";
+import ojosIcon from "./assets/ojos.png";
+
 
 import { useNavigate } from "react-router-dom";
 import "./RegisterForm.css";  // Importamos el CSS separado
@@ -19,6 +21,8 @@ function RegisterForm() {
   const [success, setSuccess] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
   const [fueEnviado, setFueEnviado] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
 
   const navigate = useNavigate();
 
@@ -161,19 +165,38 @@ function RegisterForm() {
 
         <label className="form-label">
           Contraseña:
-          <input
-            type="password"
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-            placeholder="Contraseña segura"
-            className={fueEnviado && errors.password ? "input-error" : ""}
-          />
+          <div style={{ position: "relative", width: "100%" }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={form.password}
+              onChange={handleChange}
+              placeholder="Contraseña segura"
+              className={fueEnviado && errors.password ? "input-error" : ""}
+              style={{ paddingRight: "40px", boxSizing: "border-box", width: "100%" }}
+            />
+            <img
+              src={ojosIcon}
+              alt={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+              onClick={() => setShowPassword(!showPassword)}
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: "24px",
+                height: "24px",
+                cursor: "pointer",
+                userSelect: "none",
+              }}
+            />
+          </div>
           <small className="info-text">
             Al menos 8 caracteres, 1 mayúscula, 1 minúscula, 1 número, 1 símbolo.
           </small>
           {fueEnviado && errors.password && <span className="error">{errors.password}</span>}
         </label>
+
 
         <label className="form-label">
           Género:
