@@ -3,7 +3,7 @@
   max-width: 430px;
   margin: 40px auto;
   padding: 25px;
-  background: #9ee9e9;
+  /*background: #9ee9e9;*/
   border-radius: 10px;
   box-shadow: 0 2px 8px #0001;
   font-family: Arial, sans-serif;
@@ -130,4 +130,28 @@
     opacity: 1;
     top: 40px;
   }
+}
+
+
+/* Fondo azul para toda la página del registro */
+.register-page {
+  /*background-color: #4a90e2; /* fondo azul */
+  background-image: url('./assets/Diseñofuturista.png');         /* ocupa toda la altura visible */
+  display: flex;             /* para centrar el formulario */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;             /* para que no toque los bordes de la ventana */
+  box-sizing: border-box;
+}
+
+/* Fondo distinto para el formulario para que resalte */
+.register-form {
+  max-width: 430px;
+  width: 100%;              /* que ocupe todo el ancho disponible del contenedor */
+  background: rgb(201, 237, 235);      /* blanco, o cambia a otro color claro */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  color: #000;
 }

@@ -101,98 +101,105 @@ function RegisterForm() {
   };
 
   return (
-    <form className="register-form" onSubmit={handleSubmit} noValidate>
-      <h2 className="register-form-title">Registro</h2>
+    <div className="register-page">
+      <form className="register-form" onSubmit={handleSubmit} noValidate>
+        <h2 className="register-form-title">Registro</h2>
 
-      <div className="avatar-container">
-        {form.genero === "masculino" && (
-          <img src={avatarHombre} alt="Avatar hombre" width={80} />
+        <div className="avatar-container">
+          {form.genero === "masculino" && (
+            <img src={avatarHombre} alt="Avatar hombre" width={80} />
+          )}
+          {form.genero === "femenino" && (
+            <img src={avatarMujer} alt="Avatar mujer" width={140} />
+          )}
+          {form.genero === "otro" && (
+            <img src={avatarOtros} alt="Avatar otro" width={80} />
+          )}
+        </div>
+
+        <label className="form-label">
+          Nombre:
+          <input
+            type="text"
+            name="nombre"
+            value={form.nombre}
+            onChange={handleChange}
+            placeholder="Nombre"
+            className={fueEnviado && errors.nombre ? "input-error" : ""}
+          />
+          <small className="info-text">Al menos 2 letras, sin números.</small>
+          {fueEnviado && errors.nombre && <span className="error">{errors.nombre}</span>}
+        </label>
+
+        <label className="form-label">
+          Apellido:
+          <input
+            type="text"
+            name="apellido"
+            value={form.apellido}
+            onChange={handleChange}
+            placeholder="Apellido"
+            className={fueEnviado && errors.apellido ? "input-error" : ""}
+          />
+          <small className="info-text">Al menos 2 letras, sin números.</small>
+          {fueEnviado && errors.apellido && <span className="error">{errors.apellido}</span>}
+        </label>
+
+        <label className="form-label">
+          Email:
+          <input
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            placeholder="ejemplo@mail.com"
+            className={fueEnviado && errors.email ? "input-error" : ""}
+          />
+          <small className="info-text">Debe tener un formato válido, como ejemplo@correo.cl</small>
+          {fueEnviado && errors.email && <span className="error">{errors.email}</span>}
+        </label>
+
+        <label className="form-label">
+          Contraseña:
+          <input
+            type="password"
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            placeholder="Contraseña segura"
+            className={fueEnviado && errors.password ? "input-error" : ""}
+          />
+          <small className="info-text">
+            Al menos 8 caracteres, 1 mayúscula, 1 minúscula, 1 número, 1 símbolo.
+          </small>
+          {fueEnviado && errors.password && <span className="error">{errors.password}</span>}
+        </label>
+
+        <label className="form-label">
+          Género:
+          <select
+            name="genero"
+            value={form.genero}
+            onChange={handleChange}
+            className="select-gender"
+          >
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+          </select>
+        </label>
+
+        <button type="submit" className="register-btn">
+          Registrarse
+        </button>
+
+        {fueEnviado && Object.values(errors).length > 0 && !success && (
+          <p className="error general-error">Revisa los campos marcados en rojo.</p>
         )}
-        {form.genero === "femenino" && (
-          <img src={avatarMujer} alt="Avatar mujer" width={140} />
-        )}
-        {form.genero === "otro" && (
-          <img src={avatarOtros} alt="Avatar otro" width={80} />
-        )}
-      </div>
 
-      <label className="form-label">
-        Nombre:
-        <input
-          type="text"
-          name="nombre"
-          value={form.nombre}
-          onChange={handleChange}
-          placeholder="Nombre"
-          className={fueEnviado && errors.nombre ? "input-error" : ""}
-        />
-        <small className="info-text">Al menos 2 letras, sin números.</small>
-        {fueEnviado && errors.nombre && <span className="error">{errors.nombre}</span>}
-      </label>
-
-      <label className="form-label">
-        Apellido:
-        <input
-          type="text"
-          name="apellido"
-          value={form.apellido}
-          onChange={handleChange}
-          placeholder="Apellido"
-          className={fueEnviado && errors.apellido ? "input-error" : ""}
-        />
-        <small className="info-text">Al menos 2 letras, sin números.</small>
-        {fueEnviado && errors.apellido && <span className="error">{errors.apellido}</span>}
-      </label>
-
-      <label className="form-label">
-        Email:
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-          placeholder="ejemplo@mail.com"
-          className={fueEnviado && errors.email ? "input-error" : ""}
-        />
-        <small className="info-text">Debe tener un formato válido, como ejemplo@correo.cl</small>
-        {fueEnviado && errors.email && <span className="error">{errors.email}</span>}
-      </label>
-
-      <label className="form-label">
-        Contraseña:
-        <input
-          type="password"
-          name="password"
-          value={form.password}
-          onChange={handleChange}
-          placeholder="Contraseña segura"
-          className={fueEnviado && errors.password ? "input-error" : ""}
-        />
-        <small className="info-text">
-          Al menos 8 caracteres, 1 mayúscula, 1 minúscula, 1 número, 1 símbolo.
-        </small>
-        {fueEnviado && errors.password && <span className="error">{errors.password}</span>}
-      </label>
-
-      <label className="form-label">
-        Género:
-        <select name="genero" value={form.genero} onChange={handleChange} className="select-gender">
-          <option value="masculino">Masculino</option>
-          <option value="femenino">Femenino</option>
-          <option value="otro">Otro</option>
-        </select>
-      </label>
-
-      <button type="submit" className="register-btn">
-        Registrarse
-      </button>
-
-      {fueEnviado && Object.values(errors).length > 0 && !success && (
-        <p className="error general-error">Revisa los campos marcados en rojo.</p>
-      )}
-
-      {toastVisible && <div className="toast-exito">¡Registro exitoso!</div>}
-    </form>
+        {toastVisible && <div className="toast-exito">¡Registro exitoso!</div>}
+      </form>
+    </div>
   );
 }
 
