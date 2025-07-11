@@ -79,8 +79,8 @@
 
 /* Botones circulares con efecto de luz */
 .circular-button {
-  width: 85px;                 /* Tamaño fijo ancho */
-  height: 85px;                /* Tamaño fijo alto para círculo */
+  width: 80px;                 /* Tamaño fijo ancho */
+  height: 80px;                /* Tamaño fijo alto para círculo */
   border-radius: 50%;           /* Círculo perfecto */
   border: 2px solid #00bfff;    /* Borde azul claro */
   background-color: #0b4e28;   /* Fondo verde oscuro */
