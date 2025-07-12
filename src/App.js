@@ -6,6 +6,8 @@ import LoginForm from "./LoginForm";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
 import Manual from "./Manual"; 
+import RegistroBebidas from "./RegistroBebidas"; // Importa el componente RegistroBebidas
+
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/home" element={<Home />} />
         <Route path="/manual" element={<Manual />} />
+        <Route path="/registro-bebidas" element={<RegistroBebidas />} />
+
       </Routes>
     </BrowserRouter>
   );

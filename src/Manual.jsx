@@ -302,7 +302,7 @@ function Manual() {
         </button>
 
         <button
-          onClick={() => navigate("/registrobebidas")}
+          onClick={() => navigate("/registro-bebidas")}
           className="manual-back-button"
         >
           Ir a Registro Bebidas
