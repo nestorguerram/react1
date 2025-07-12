@@ -1,7 +1,8 @@
 .contenedor {
-  max-width: 600px;
-  margin: auto;
+  max-width: 300px;
+  margin: 0 0 0 100px; /* arriba 0px, derecha 0, abajo 0, izquierda 100px */
 }
+
 
 .titulo {
   text-align: center;

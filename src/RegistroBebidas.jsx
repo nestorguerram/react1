@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import "./RegistroBebidas.css"; // Importa estilos externos
+import cervezaImg from "./assets/homerocerveza.png";
+import piscolaImg from "./assets/piscola.png";
+import jugoImg from "./assets/jugo.png";
+import otros1Img from "./assets/caipiriña.png";
+import otros2Img from "./assets/whisky.png";
+
 
 // Definimos el array inicial con las bebidas y cantidades en cero
 const bebidasIniciales = [
-  { id: 1, nombre: "Cerveza", imagen: "./assets/homerocerveza.png", cantidad: 0 },
-  { id: 2, nombre: "Piscola", imagen: "./assets/piscola.png", cantidad: 0 },
-  { id: 3, nombre: "Jugo", imagen: "./assets/jugo.png", cantidad: 0 },
-  { id: 4, nombre: "Otros 1", imagen: "./assets/caipiriña.png", cantidad: 0 },
-  { id: 5, nombre: "Otros 2", imagen: "./assets/whisky.png", cantidad: 0 },
+  { id: 1, nombre: "Cerveza", imagen:cervezaImg, cantidad: 0 },
+  { id: 2, nombre: "Piscola", imagen: piscolaImg, cantidad: 0 },
+  { id: 3, nombre: "Jugo", imagen: jugoImg, cantidad: 0 },
+  { id: 4, nombre: "Otros 1", imagen: otros1Img, cantidad: 0 },
+  { id: 5, nombre: "Otros 2", imagen: otros2Img, cantidad: 0 },
 ];
 
 function RegistroBebidas() {
