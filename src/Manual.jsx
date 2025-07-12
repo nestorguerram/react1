@@ -292,13 +292,22 @@ function Manual() {
       {/* Renderizado del contenido Markdown */}
       <ReactMarkdown>{markdown}</ReactMarkdown>
 
-      {/* Botón para volver al inicio */}
-      <button
-        onClick={() => navigate("/")}
-        className="manual-back-button"
-      >
-        Ir al inicio de sesión
-      </button>
+      {/* Contenedor para los botones */}
+      <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginTop: "20px" }}>
+        <button
+          onClick={() => navigate("/")}
+          className="manual-back-button"
+        >
+          Ir al inicio de sesión
+        </button>
+
+        <button
+          onClick={() => navigate("/registrobebidas")}
+          className="manual-back-button"
+        >
+          Ir a Registro Bebidas
+        </button>
+      </div>
     </div>
   );
 }
