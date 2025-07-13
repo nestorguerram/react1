@@ -156,3 +156,13 @@ body {
 .precioInput {
     -moz-appearance: textfield;
 }
+
+
+.propina label {
+  color: red;
+  font-weight: bold;
+}
+
+.propina input[type="checkbox"] {
+  accent-color: red; /* Esto hará que el check y borde sean rojos */
+}

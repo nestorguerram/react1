@@ -179,7 +179,7 @@ export default function RegistroBebidas() {
 
           {/* Checkbox para activar o desactivar la propina */}
           <div className="propina">
-            <label>
+            <label style={{ color: "white", fontWeight: "bold" }}>
               <input
                 type="checkbox"
                 checked={propinaActiva}
