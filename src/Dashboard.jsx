@@ -26,7 +26,7 @@ function Dashboard() {
         {/* Botón para navegar a la página principal "home" */}
         <button
           className="dashboard-button"
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/registro-bebidas")}// Al hacer clic, se navega a la ruta "/registro-bebidas"
         >
           Comencemos a navegar
         </button>

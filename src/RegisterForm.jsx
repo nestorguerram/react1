@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import avatarHombre from "./assets/hombre.png";
 import avatarMujer from "./assets/mujer.png";
-import avatarOtros from "./assets/otro.png";
+import avatarOtros from "./assets/donaldtrump.gif";
 import ojosIcon from "./assets/ojos.png";
 
 
