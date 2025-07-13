@@ -3,6 +3,7 @@ body {
   margin: 0; /* Opcional, para que no haya margen por defecto */
   padding: 0;
   font-family: Arial, sans-serif;
+  color: white; /* Color de texto blanco */
 }
 
 
@@ -10,12 +11,12 @@ body {
 
 /* Contenedor principal: define tamaño, fuente, borde y divide en dos columnas */
 .contenedor {
-    color: white; /* Color de texto blanco */
+  color: white(57, 197, 15); /* Color de texto blanco */
   max-width: 500px;           /* Ancho máximo del contenedor */
   margin: 30px auto;          /* Centrado horizontal con margen arriba y abajo */
   font-family: Arial, sans-serif; /* Fuente legible */
   padding: 15px;              /* Espacio interno */
-  border: 1px solid #ddd;     /* Borde gris claro */
+  /*border: 2px solid #ddd;     /* Borde gris claro */
   border-radius: 8px;         /* Bordes redondeados */
   display: flex;              /* Contenido en fila (flexbox) */
   gap: 30px; 
@@ -23,8 +24,9 @@ body {
   /* Fondo con GIF */
   background-image: url("./assets/cervezallenandose.gif"); /* Ajusta la ruta según tu estructura */
   background-repeat: no-repeat;
+  box-shadow: 0 0 8px rgba(224, 234, 240, 0.7);
   background-position: center center;
-  background-color: rgba(245, 240, 240, 0.5);
+  background-color: rgba(245, 240, 240, 0.2);
   background-size: cover; /* Para que el GIF cubra todo el contenedor *//* Espacio entre columnas */
 }
 
@@ -40,7 +42,7 @@ body {
   align-items: center;       /* Centra verticalmente */
   margin-bottom: 15px;       /* Separación entre bebidas */
   border: 1px solid #ccc;    /* Borde gris */
-  padding: 10px;             /* Espacio interno */
+  padding: 6px;             /* Espacio interno */
   border-radius: 6px;        /* Bordes redondeados */
 }
 
@@ -120,19 +122,26 @@ body {
 /* Contenedor para mostrar totales */
 .totales {
   margin-top: 20px;
-  font-size: 18px;
-  color:white;
+  font-size: 16px;
+  font-weight: bold;
+  color:rgb(1, 10, 19);
 }
 
 /* Botón para resetear consumos y precios */
 .botonReset {
-  margin-top: 25px;
-  padding: 12px 25px;
+  
+  margin: 10px auto 0;
+  width: fit-content;
+  /*margin-top: 25px; */
+  padding: 12px 20px;
   background-color: #dc3545;
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  position: relative;
+  left: -130px;
+  
 }
 
 

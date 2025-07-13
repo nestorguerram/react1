@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-// Importa el CSS que has definido con estilos para el componente
+// Importa los estilos CSS
 import "./RegistroBebidas.css";
 
-// Importa imágenes locales desde src/assets
+// Importa las imágenes desde assets
 import cervezaImg from "./assets/homerocerveza.png";
 import piscolaImg from "./assets/piscola.png";
 import jugoImg from "./assets/jugo.png";
 import otros1Img from "./assets/caipiriña.png";
 import otros2Img from "./assets/whisky.png";
 
-// Definición inicial de bebidas con sus imágenes y cantidades en 0
+// Array inicial con las bebidas, imágenes y cantidad 0
 const bebidasIniciales = [
   { id: 1, nombre: "Cerveza", imagen: cervezaImg, cantidad: 0 },
   { id: 2, nombre: "Piscola", imagen: piscolaImg, cantidad: 0 },
@@ -19,16 +19,16 @@ const bebidasIniciales = [
 ];
 
 export default function RegistroBebidas() {
-  // Estado para cantidades consumidas de bebidas
+  // Estado que almacena las cantidades consumidas
   const [bebidas, setBebidas] = useState(bebidasIniciales);
 
-  // Estado para precios ingresados manualmente por bebida (objeto id->precio)
+  // Estado que almacena los precios manuales
   const [precios, setPrecios] = useState({});
 
-  /**
-   * Incrementa la cantidad consumida de la bebida con el id dado
-   * @param {number} id - id de la bebida a incrementar
-   */
+  // Estado para controlar si la propina del 10% está activa
+  const [propinaActiva, setPropinaActiva] = useState(false);
+
+  // Incrementa la cantidad consumida de la bebida con id dado
   const incrementarCantidad = (id) => {
     setBebidas((prev) =>
       prev.map((b) =>
@@ -37,10 +37,7 @@ export default function RegistroBebidas() {
     );
   };
 
-  /**
-   * Decrementa la cantidad consumida, pero nunca menos de cero
-   * @param {number} id - id de la bebida a decrementar
-   */
+  // Decrementa la cantidad consumida, sin bajar de 0
   const decrementarCantidad = (id) => {
     setBebidas((prev) =>
       prev.map((b) =>
@@ -51,11 +48,7 @@ export default function RegistroBebidas() {
     );
   };
 
-  /**
-   * Actualiza el precio de la bebida con el id dado según el input
-   * @param {number} id - id de la bebida
-   * @param {string} valor - valor ingresado en el input (string)
-   */
+  // Maneja el cambio de precio ingresado para una bebida
   const manejarPrecioChange = (id, valor) => {
     const precio = parseFloat(valor);
     setPrecios((prev) => ({
@@ -64,39 +57,39 @@ export default function RegistroBebidas() {
     }));
   };
 
-  /**
-   * Resetea todas las cantidades a 0 y limpia todos los precios
-   */
+  // Resetea cantidades, precios y desactiva propina
   const resetear = () => {
     setBebidas((prev) => prev.map((b) => ({ ...b, cantidad: 0 })));
     setPrecios({});
+    setPropinaActiva(false);
   };
 
-  // Total de tragos consumidos sumando cantidades de todas las bebidas
+  // Calcula el total de tragos consumidos
   const totalTragos = bebidas.reduce((sum, b) => sum + b.cantidad, 0);
 
-  // Total a pagar: suma de (cantidad * precio) para cada bebida
+  // Calcula el total sin propina
   const totalPagar = bebidas.reduce(
     (sum, b) => sum + b.cantidad * (precios[b.id] || 0),
     0
   );
 
+  // Calcula el total con propina si está activada
+  const totalFinal = propinaActiva ? totalPagar * 1.1 : totalPagar;
+
   return (
     <div className="contenedor">
-      {/* Columna izquierda: listado de bebidas */}
+      {/* Columna izquierda con listado de bebidas y controles */}
       <div className="columnaIzquierda">
         <h3>Registro de Consumo de Bebidas</h3>
 
+        {/* Mapeo para mostrar cada bebida con imagen, nombre, cantidad y botones */}
         {bebidas.map((bebida) => (
           <div key={bebida.id} className="bebidaItem">
-            {/* Imagen de la bebida */}
             <img
               src={bebida.imagen}
               alt={bebida.nombre}
               className="bebidaImagen"
             />
-
-            {/* Información: nombre y cantidad consumida */}
             <div className="bebidaInfo">
               <strong>{bebida.nombre}</strong>
               <div>Cantidad: {bebida.cantidad}</div>
@@ -123,10 +116,11 @@ export default function RegistroBebidas() {
         ))}
       </div>
 
-      {/* Columna derecha: inputs para precios y resumen */}
+      {/* Columna derecha con inputs para precios, propina y totales */}
       <div className="columnaDerecha">
         <h3>Ingrese el precio de cada bebida:</h3>
 
+        {/* Inputs para que el usuario ingrese precio por bebida */}
         {bebidas.map((bebida) => (
           <div key={bebida.id} className="precioItem">
             <label htmlFor={`precio-${bebida.id}`} className="precioLabel">
@@ -136,33 +130,51 @@ export default function RegistroBebidas() {
               type="number"
               id={`precio-${bebida.id}`}
               min="0"
-              /*step="0.01"*/
+              step="0.01"
               value={precios[bebida.id] || ""}
               onChange={(e) => manejarPrecioChange(bebida.id, e.target.value)}
               className="precioInput"
-              placeholder="Solo el valor, sin simbolo $ 1500"
+              placeholder="Ingrese solo números Ej: 1500"
             />
           </div>
         ))}
 
+        {/* Checkbox para activar o desactivar la propina del 10% */}
+        <div className="propina">
+          <label>
+            <input
+              type="checkbox"
+              checked={propinaActiva}
+              onChange={() => setPropinaActiva(!propinaActiva)}
+            />
+            Agregar propina del 10%
+          </label>
+        </div>
+
         <hr />
 
+        {/* Totales: cantidad total y valor total a pagar */}
         <div className="totales">
           <div>
             <strong>Total de tragos consumidos:</strong> {totalTragos}
           </div>
           <div>
-            <strong>Total a pagar:</strong>{" "}
+            <strong>
+              Total a pagar{propinaActiva ? " (con propina)" : ""}:
+            </strong>{" "}
             {new Intl.NumberFormat("es-CL", {
               style: "currency",
               currency: "CLP",
-            }).format(totalPagar)}
+            }).format(totalFinal)}
           </div>
         </div>
 
-        <button className="botonReset" onClick={resetear}>
-          Reiniciar consumo y precios
-        </button>
+        {/* Contenedor flex para centrar el botón */}
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <button className="botonReset" onClick={resetear}>
+            Reiniciar consumo y precios
+          </button>
+        </div>
       </div>
     </div>
   );
