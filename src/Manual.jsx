@@ -319,14 +319,14 @@ function Manual() {
           onClick={() => navigate("/")}
           className="manual-back-button"
         >
-          Ir al inicio de sesión
+          Ir a login
         </button>
 
         <button
           onClick={() => navigate("/registro-bebidas")}
           className="manual-back-button"
         >
-          Ir a Registro Bebidas
+           Ir a APP
         </button>
       </div>
     </div>
