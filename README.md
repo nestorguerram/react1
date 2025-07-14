@@ -196,6 +196,13 @@ Es una aplicación web simple con autenticación de usuarios, donde puedes:
 
 - `App.js`: configuración de rutas usando React Router para navegar entre los componentes según la URL.
 
+- `xxx.css`: De cada uno de los archivos JSX, nos permite la modularidad, mantenimiento, claridad, escalabilidad, organización, performance y carga, de cada uno de los estilos de los distintos componentes JSX.
+
+- `RegistroBebidas.jsx`: Componente para registrar consumos, asignar precios manualmente, calcular un total a pagar con opción de propina y reiniciar todos los valores con un botón.
+
+- `Cierre.jsx`: El Componente muestra un mensaje de agradecimiento y confirmación tras el uso del mismo.
+
+
 ---
 
 ## Cómo funciona la navegación
@@ -208,7 +215,11 @@ Es una aplicación web simple con autenticación de usuarios, donde puedes:
 
 - Al iniciar sesión, si es correcto, se redirige a /dashboard con mensaje personalizado.
 
-- Desde dashboard, puede continuar a home o ir a una pequeña descripción.
+- Desde dashboard, puede continuar a home o ir a una pequeña descripción del manual de React.
+
+- El usuario luego de su registro, puede ir a un componente para registrar consumos, asignar precios manualmente, calcular un total a pagar con opción de propina y reiniciar todos los valores con un botón.
+
+- Luego como final o salida puede ir a una despedida o fin para luego si gusta ir al login nuevamente.
 
 ---
 

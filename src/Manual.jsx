@@ -201,17 +201,21 @@ Es una aplicación web simple con autenticación de usuarios, donde puedes:
 
 ## Principales componentes
 
-- \`LoginForm.jsx\`: formulario para iniciar sesión. Valida usuario y contraseña, muestra errores, navega al dashboard con datos del usuario.
+- \`LoginForm.jsx\`: Formulario para iniciar sesión. Valida usuario y contraseña, muestra errores, navega al dashboard con datos del usuario.
 
-- \`RegisterForm.jsx\`: formulario para registrarse. Valida datos, guarda usuario nuevo en localStorage, navega a la página de bienvenida (Home).
+- \`RegisterForm.jsx\`: Formulario para registrarse. Valida datos, guarda usuario nuevo en localStorage, navega a la página de bienvenida (Home).
 
-- \`Dashboard.jsx\`: muestra mensaje de bienvenida con el nombre completo del usuario logueado, permite continuar a la navegación principal (Home).
+- \`Dashboard.jsx\`: Muestra mensaje de bienvenida con el nombre completo del usuario logueado, permite continuar a la navegación principal (Home).
 
-- \`Home.jsx\`: página de bienvenida post registro con mensaje personalizado y botón para volver al login.
+- \`Home.jsx\`: Página de bienvenida post registro con mensaje personalizado y botón para volver al login.
 
-- \`App.js\`: configuración de rutas usando React Router para navegar entre los componentes según la URL.
+- \`App.js\`: Configuración de rutas usando React Router para navegar entre los componentes según la URL.
 
-- \`xxx.css\`: de cada uno de los archivos jsx ,nos permite la modularidad, mantenimiento, claridad, escalabilidad, organización, performance y carga, de cada uno de los estilos de los distintos componentes jsx
+- \`xxx.css\`: De cada uno de los archivos JSX, nos permite la modularidad, mantenimiento, claridad, escalabilidad, organización, performance y carga, de cada uno de los estilos de los distintos componentes JSX.
+
+- \`RegistroBebidas.jsx\`: Componente para registrar consumos, asignar precios manualmente, calcular un total a pagar con opción de propina y reiniciar todos los valores con un botón.
+
+- \`Cierre.jsx\`: El Componente muestra un mensaje de agradecimiento y confirmación tras el uso del mismo.
 
 ---
 
@@ -226,6 +230,10 @@ Es una aplicación web simple con autenticación de usuarios, donde puedes:
 - Al iniciar sesión, si es correcto, se redirige a /dashboard con mensaje personalizado.
 
 - Desde dashboard, puede continuar a home o cerrar sesión.
+ 
+- El usuario luego de su registro, puede ir a un componente para registrar consumos, asignar precios manualmente, calcular un total a pagar con opción de propina y reiniciar todos los valores con un botón.
+
+- Luego como final o salida puede ir a una despedida o fin para luego si gusta ir al login nuevamente.
 
 ---
 
@@ -292,7 +300,14 @@ function Manual() {
       {/* Renderizado del contenido Markdown */}
       <ReactMarkdown>{markdown}</ReactMarkdown>
 
-      {/* Contenedor para los botones */}
+      
+
+      
+      
+      
+      
+      
+      {/*Contenedor para los botones */}
       <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginTop: "20px" }}>
         <button
           onClick={() => navigate("/")}
