@@ -22,13 +22,13 @@
 /* Título centrado */
 .register-form-title {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 /* Contenedor para avatar */
 .avatar-container {
   text-align: center;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 /* Etiquetas */

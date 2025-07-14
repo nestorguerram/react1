@@ -15,7 +15,7 @@ export default function Cierre() {
       {/* Contenedor del contenido centrado y desplazado hacia abajo */}
       <div className="contenidoCierre">
         <h1>¡Gracias por participar!</h1>
-        <p>El registro ha sido completado correctamente.</p>
+        <p>Puedes volver al registro para volver a intentarlo.</p>
 
         {/* Botón que vuelve al login (ruta /) */}
         <button className="botonCierre" onClick={() => navigate("/")}>

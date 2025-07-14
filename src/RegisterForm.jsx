@@ -113,13 +113,13 @@ function RegisterForm() {
 
         <div className="avatar-container">
           {form.genero === "masculino" && (
-            <img src={avatarHombre} alt="Avatar hombre" width={60} />
+            <img src={avatarHombre} alt="Avatar hombre" width={53} />
           )}
           {form.genero === "femenino" && (
             <img src={avatarMujer} alt="Avatar mujer" width={160} />
           )}
           {form.genero === "otro" && (
-            <img src={avatarOtros} alt="Avatar otro" width={80} />
+            <img src={avatarOtros} alt="Avatar otro" width={99} />
           )}
         </div>
 

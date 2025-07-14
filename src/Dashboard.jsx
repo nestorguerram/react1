@@ -28,7 +28,7 @@ function Dashboard() {
           className="dashboard-button"
           onClick={() => navigate("/registro-bebidas")}// Al hacer clic, se navega a la ruta "/registro-bebidas"
         >
-          Comencemos a navegar
+          Vamos a la App
         </button>
       </div>
     </div>
