@@ -160,7 +160,9 @@ Dentro de la carpeta `src`, donde reside el núcleo de la aplicación React, se 
 
   - `reportWebVitals.js`: Archivo para medir el rendimiento de la aplicación, siguiendo las recomendaciones oficiales de React.
 
-  - `Manual.jsx`: es una página informativa y estática que presenta un tutorial sobre React, con estilo visual
+  - `Manual.jsx`: Es una página informativa y estática que presenta un tutorial sobre React, con estilo visual.
+
+  - `RegistroBebidas.jsx`: Es un compenente que nos calcula la cantidad y precio de lo consumido.
 
 Esta descripción aporta claridad sobre cómo está organizado el proyecto, facilitando su comprensión y mantenimiento.
 
@@ -265,5 +267,9 @@ Este tutorial básico sirve para aclarar dudas sobre cómo empezar con React des
 
 ## Información extraída de la web como:
 
-[https://www.w3schools.com/react/default.asp](https://www.w3schools.com/react/default.asp)  
-[https://www.hackaboss.com/blog/react-utilidad](https://www.hackaboss.com/blog/react-utilidad)
+
+- [https://www.w3schools.com/react/default.asp](https://www.w3schools.com/react/default.asp)  
+- [https://es.react.dev/learn](https://es.react.dev/learn)
+- [https://www.hackaboss.com/blog/react-utilidad](https://www.hackaboss.com/blog/react-utilidad)
+- [https://cursoreact.dev/](https://cursoreact.dev/)
+v
