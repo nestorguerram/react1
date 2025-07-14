@@ -106,15 +106,17 @@ function RegisterForm() {
 
   return (
     <div className="register-page">
-      <form className="register-form" onSubmit={handleSubmit} noValidate>
+      <form className="register-form" onSubmit={handleSubmit} autoComplete="off" noValidate>
+
+      
         <h2 className="register-form-title">Registro</h2>
 
         <div className="avatar-container">
           {form.genero === "masculino" && (
-            <img src={avatarHombre} alt="Avatar hombre" width={80} />
+            <img src={avatarHombre} alt="Avatar hombre" width={60} />
           )}
           {form.genero === "femenino" && (
-            <img src={avatarMujer} alt="Avatar mujer" width={140} />
+            <img src={avatarMujer} alt="Avatar mujer" width={160} />
           )}
           {form.genero === "otro" && (
             <img src={avatarOtros} alt="Avatar otro" width={80} />

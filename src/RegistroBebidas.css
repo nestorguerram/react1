@@ -11,7 +11,7 @@ body {
 
 /* Contenedor principal: define tamaño, fuente, borde y divide en dos columnas */
 .contenedor {
-  color: white(57, 197, 15); /* Color de texto blanco */
+  color: white; /* Color de texto blanco */
   max-width: 500px;           /* Ancho máximo del contenedor */
   margin: 30px auto;          /* Centrado horizontal con margen arriba y abajo */
   font-family: Arial, sans-serif; /* Fuente legible */
@@ -194,4 +194,5 @@ body {
 
 .botonFin:hover {
   background-color: darkred;
+  opacity: 1;
 }

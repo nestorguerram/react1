@@ -1,6 +1,6 @@
 /* Fondo de la página Cierre con imagen centrada y completa */
 .paginaCierre {
-  background-image: url("./assets/fondoCierre.png"); /* Solo si lo haces desde CSS */
+  /*background-image: url("./assets/fondoCierre.png"); /* Solo si lo haces desde CSS */
   background-size: contain;        /* Muestra la imagen completa, aunque deje espacio */
   background-position: center;     /* Centrada en pantalla */
   background-repeat: no-repeat;
@@ -16,9 +16,7 @@
 }
 
 /* Contenedor del contenido principal, desplazado hacia abajo */
-.contenidoCierre {
-  margin-top: 400px; /* Desplaza el texto y botón hacia abajo */
-}
+
 
 /* Tamaño del título */
 .contenidoCierre h1 {
@@ -32,6 +30,21 @@
   margin-bottom: 30px;
 }
 
+.contenidoCierre {
+  margin-top: 60vh;
+  animation: aparecer 2s ease-in-out;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Botón de regreso */
 .botonCierre {

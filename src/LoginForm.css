@@ -41,8 +41,9 @@
 /* Inputs de texto y contraseña */
 .login-form input[type="text"],
 .login-form input[type="password"] {
-  flex: none;                /* Evita que el input se estire en contenedor flex */
-  width: 100px;              /* Ancho fijo para inputs */
+  flex: none;
+                /* Evita que el input se estire en contenedor flex */
+  /*width: 100px;              /* Ancho fijo para inputs */
   
   border-radius: 15px;
   border: 1.5px solid #b3b3b3;

@@ -1,14 +1,23 @@
 /* Contenedor del formulario */
 .register-form {
   max-width: 430px;
+  width: 100%; 
   margin: 40px auto;
   padding: 25px;
   /*background: #9ee9e9;*/
   border-radius: 100px;
+  background: rgb(201, 237, 235);
   
   font-family: Arial, sans-serif;
   color: black;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 25px;
+  
+  background: rgba(255, 255, 255, 0.2); /* con transparencia */
+  backdrop-filter: blur(2px);
 }
+
 
 /* Título centrado */
 .register-form-title {
@@ -144,14 +153,4 @@
   box-sizing: border-box;
 }
 
-/* Fondo distinto para el formulario para que resalte */
-.register-form {
-  max-width: 430px;
-  width: 100%;              /* que ocupe todo el ancho disponible del contenedor */
-  background: rgb(201, 237, 235);      /* blanco, o cambia a otro color claro */
-  border-radius: 10px;
-  box-shadow: 0 2px 8px #0001;
-  padding: 25px;
-  font-family: Arial, sans-serif;
-  color: #000;
-}
+
