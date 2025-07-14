@@ -272,4 +272,3 @@ Este tutorial básico sirve para aclarar dudas sobre cómo empezar con React des
 - [https://es.react.dev/learn](https://es.react.dev/learn)
 - [https://www.hackaboss.com/blog/react-utilidad](https://www.hackaboss.com/blog/react-utilidad)
 - [https://cursoreact.dev/](https://cursoreact.dev/)
-v
