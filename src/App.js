@@ -7,6 +7,7 @@ import Home from "./Home";
 import Dashboard from "./Dashboard";
 import Manual from "./Manual"; 
 import RegistroBebidas from "./RegistroBebidas"; // Importa el componente RegistroBebidas
+import Cierre from "./Cierre";
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/manual" element={<Manual />} />
         <Route path="/registro-bebidas" element={<RegistroBebidas />} />
+        <Route path="/final" element={<Cierre />} />
+        
 
       </Routes>
     </BrowserRouter>

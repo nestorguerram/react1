@@ -166,3 +166,32 @@ body {
 .propina input[type="checkbox"] {
   accent-color: red; /* Esto hará que el check y borde sean rojos */
 }
+
+
+/* Botón rojo flotante en la esquina inferior derecha */
+.botonFin {
+  position: fixed;          /* Fija el botón en la pantalla sin importar el scroll */
+  bottom: 20px;             /* Distancia desde abajo */
+  right: 20px;              /* Distancia desde la derecha */
+  background-color: red;    /* Color de fondo rojo */
+  color: white;             /* Texto en blanco */
+  border: none;             /* Sin borde */
+  border-radius: 50%;       /* Forma redonda */
+  width: 60px;              /* Ancho fijo */
+  height: 60px;             /* Alto fijo */
+  font-size: 16px;          /* Tamaño del texto */
+  font-weight: bold;        /* Negrita */
+  display: flex;            /* Flex para centrar el texto */
+  align-items: center;      /* Centrado vertical */
+  justify-content: center;  /* Centrado horizontal */
+  text-decoration: none;    /* Sin subrayado */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+  transition: background-color 0.3s ease;  /* Transición suave al pasar el mouse */
+  z-index: 1000;            /* Asegura que esté sobre todos los elementos */
+  opacity: 0.3; /* 0.0 = totalmente transparente, 1.0 = totalmente opaco */
+
+}
+
+.botonFin:hover {
+  background-color: darkred;
+}

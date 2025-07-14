@@ -50,6 +50,9 @@ body {
   cursor: pointer;
 }
 
+.home-button:hover {
+  background-color: rgb(47, 73, 84);
+}
 
 @keyframes spin {
   from {

@@ -34,4 +34,9 @@
   font-size: 1.07em;
   font-weight: bold;
   cursor: pointer;
+  
+}
+
+.dashboard-button:hover {
+  background-color: rgb(20, 85, 138);
 }

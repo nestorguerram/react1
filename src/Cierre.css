@@ -1,0 +1,52 @@
+/* Fondo de la página Cierre con imagen centrada y completa */
+.paginaCierre {
+  background-image: url("./assets/fondoCierre.png"); /* Solo si lo haces desde CSS */
+  background-size: contain;        /* Muestra la imagen completa, aunque deje espacio */
+  background-position: center;     /* Centrada en pantalla */
+  background-repeat: no-repeat;
+  background-color: #1a1a1a;       /* Color de fondo por si la imagen no cubre todo */
+  min-height: 100vh;               /* Toda la altura de la ventana */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;     /* Comienza desde arriba */
+  align-items: center;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Contenedor del contenido principal, desplazado hacia abajo */
+.contenidoCierre {
+  margin-top: 400px; /* Desplaza el texto y botón hacia abajo */
+}
+
+/* Tamaño del título */
+.contenidoCierre h1 {
+  font-size: 20px; /* Puedes ajustar a 28px, 42px, etc. */
+  margin-bottom: 20px;
+}
+
+/* Tamaño del texto del párrafo */
+.contenidoCierre p {
+  font-size: 15px; /* Ajusta según necesidad */
+  margin-bottom: 30px;
+}
+
+
+/* Botón de regreso */
+.botonCierre {
+  
+  padding: 10px 20px;
+  background-color: #dc3545;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.botonCierre:hover {
+  background-color: darkred;
+}

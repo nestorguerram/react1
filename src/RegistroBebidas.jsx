@@ -215,7 +215,13 @@ export default function RegistroBebidas() {
             </button>
           </div>
         </div>
-      </div>
-    </>
+      </div>  
+      
+        <a href="/final" className="botonFin">
+          Fin
+        </a>
+      </>  
+      
+    
   );
 }
