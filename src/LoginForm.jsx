@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import backgroundImage from "./assets/background.png";
-import eyeIcon from "./assets/ojos.png"; // Asegúrate que la ruta y nombre sean correctos
+import eyeIcon from "./assets/ojos.png"; 
 
 function LoginForm() {
   const [user, setUser] = useState("");
@@ -72,7 +72,7 @@ function LoginForm() {
             value={user}
             onChange={(e) => setUser(e.target.value)}
             autoComplete="off"
-            placeholder="Ingrese su usuario formato ejemplo@email.com"
+            placeholder="ejemplo@email.com"
             className={error && !user ? "input-error" : ""}
             style={{ width: "100%" }}
           />

@@ -1,10 +1,10 @@
 /* Fondo de la página Cierre con imagen centrada y completa */
 .paginaCierre {
-  /*background-image: url("./assets/fondoCierre.png"); /* Solo si lo haces desde CSS */
+  /*background-image: url("./assets/fondoCierre.png")*/
   background-size: contain;        /* Muestra la imagen completa, aunque deje espacio */
   background-position: center;     /* Centrada en pantalla */
   background-repeat: no-repeat;
-  background-color: #1a1a1a;       /* Color de fondo por si la imagen no cubre todo */
+  background-color: black;       /* Color de fondo por si la imagen no cubre todo */
   min-height: 100vh;               /* Toda la altura de la ventana */
   display: flex;
   flex-direction: column;
@@ -20,13 +20,13 @@
 
 /* Tamaño del título */
 .contenidoCierre h1 {
-  font-size: 20px; /* Puedes ajustar a 28px, 42px, etc. */
+  font-size: 20px; /* se puede ajustar a 28px, 42px, etc. */
   margin-bottom: 20px;
 }
 
-/* Tamaño del texto del párrafo */
+/* Tamaño del texto del parrafo */
 .contenidoCierre p {
-  font-size: 15px; /* Ajusta según necesidad */
+  font-size: 15px; /* Ajusta segun necesidad */
   margin-bottom: 30px;
 }
 
@@ -46,7 +46,7 @@
   }
 }
 
-/* Botón de regreso */
+/* Boton de regreso */
 .botonCierre {
   
   padding: 10px 20px;

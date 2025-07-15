@@ -27,15 +27,15 @@ function Home() {
         {/* Botón para ir al manual */}
         <button
           onClick={() => navigate("/manual")} // Navega a la ruta /manual al hacer clic
-          className="home-button" // Aplica estilos uniformes de botón
+          className="home-button" // Aplica estilos uniformes de boton
         >
           Continuar al Manual
         </button>
 
         {/* Botón para ir a la app de registro */}
         <button
-          onClick={() => navigate("/registro-bebidas")} // Navega a la ruta /registro al hacer clic
-          className="home-button" // Aplica los mismos estilos que el otro botón
+          onClick={() => navigate("/registro-bebidas")} // Navega al registro al hacer clic
+          className="home-button" // Aplica los mismos estilos que el otro botn
           style={{ marginLeft: "15px" }} // Añade espacio a la izquierda para separar botones
         >
           Vamos a la App

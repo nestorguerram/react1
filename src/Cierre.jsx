@@ -17,9 +17,9 @@ export default function Cierre() {
         <h1>¡Gracias por participar!</h1>
         <p>Puedes volver al registro para volver a intentarlo.</p>
 
-        {/* Botón que vuelve al login (ruta /) */}
+        {/* Boton que vuelve al login (ruta /) */}
         <button className="botonCierre" onClick={() => navigate("/")}>
-          Volver a Registro
+          Volver al Login
         </button>
       </div>
     </div>

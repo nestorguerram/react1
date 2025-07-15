@@ -1,11 +1,11 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import { useNavigate } from "react-router-dom";
-import fondomanual from "./assets/fondomanual.png"; // Imagen de fondo importada
-import ScrollToBottomButton from "./components/ScrollToBottomButton"; // Botón para ir al final
-import "./Manual.css"; // Importamos estilos externos
+import fondomanual from "./assets/fondomanual.png"; // Imagen de fondo 
+import ScrollToBottomButton from "./components/ScrollToBottomButton"; // Boton para ir al final
+import "./Manual.css"; //  estilos 
 
-// Contenido Markdown que se mostrará en la página
+// Contenido Markdown que se mostrara en la página
 
 
 
@@ -303,15 +303,9 @@ function Manual() {
         <ScrollToBottomButton />
       </div>
         
-      {/* Renderizado del contenido Markdown */}
+      {/* creo aue se llama renderizado del contenido Markdown */}
       <ReactMarkdown>{markdown}</ReactMarkdown>
 
-      
-
-      
-      
-      
-      
       
       {/*Contenedor para los botones */}
       <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginTop: "20px" }}>

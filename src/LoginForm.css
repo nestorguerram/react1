@@ -103,6 +103,6 @@
 
 
 .login-form input[type="text"] {
-  /*width: 250px; *//* o el ancho que necesites */
+  /*width: 250px; */
   max-width: 250px /* para que no se salga en pantallas pequeñas */
 }

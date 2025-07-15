@@ -1,5 +1,5 @@
 body {
-  background-color: #343938; /* Color gris para toda la página */
+  background-color: black; /* Color gris para toda la página */
   margin: 0; /* Opcional, para que no haya margen por defecto */
   padding: 0;
   font-family: Arial, sans-serif;
@@ -24,9 +24,11 @@ body {
   /* Fondo con GIF */
   background-image: url("./assets/cervezallenandose.gif"); /* Ajusta la ruta según tu estructura */
   background-repeat: no-repeat;
-  box-shadow: 0 0 8px rgba(224, 234, 240, 0.7);
+  box-shadow: 0 0 20px 15px rgba(255, 0, 0, 0.6); /* Luz roja intensa */
+
+  /*box-shadow: 0 0 8px rgb(246, 247, 248);*/
   background-position: center center;
-  background-color: rgba(245, 240, 240, 0.2);
+  background-color: rgba(234, 230, 12, 0.2);
   background-size: cover; /* Para que el GIF cubra todo el contenedor *//* Espacio entre columnas */
 }
 
@@ -145,7 +147,7 @@ body {
 }
 
 
-/* Ocultar flechas en input number para navegadores basados en WebKit (Chrome, Edge, Safari) */
+/* Ocultar flechas en input numbero para navegadores basados en WebKit (Chrome, Edge, Safari) */
 .precioInput::-webkit-outer-spin-button,
 .precioInput::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -185,7 +187,7 @@ body {
   align-items: center;      /* Centrado vertical */
   justify-content: center;  /* Centrado horizontal */
   text-decoration: none;    /* Sin subrayado */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+  box-shadow: 0 4px 8px red (0, 0, 0, 0.9); /* Sombra para resaltar */
   transition: background-color 0.3s ease;  /* Transición suave al pasar el mouse */
   z-index: 1000;            /* Asegura que esté sobre todos los elementos */
   opacity: 0.3; /* 0.0 = totalmente transparente, 1.0 = totalmente opaco */
