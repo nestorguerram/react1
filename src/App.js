@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 import RegisterForm from "./RegisterForm";
 import LoginForm from "./LoginForm";
 import Home from "./Home";
@@ -12,7 +13,7 @@ import Cierre from "./Cierre";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/react1/">
       <Routes>
         {/* Mostrar LoginForm en la ruta raíz '/' */}
         <Route path="/" element={<LoginForm />} />
