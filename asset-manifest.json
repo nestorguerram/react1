@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/react1/static/css/main.784d4259.css",
+    "main.js": "/react1/static/js/main.faea43a1.js",
+    "static/js/453.20aaacc4.chunk.js": "/react1/static/js/453.20aaacc4.chunk.js",
+    "static/media/cervezallenandose.gif": "/react1/static/media/cervezallenandose.5ecdaeadea99110aadde.gif",
+    "static/media/fondoCierre.png": "/react1/static/media/fondoCierre.1a3fc228d572d48dd562.png",
+    "static/media/fondodereacgif.gif": "/react1/static/media/fondodereacgif.4ed6a95b9ebc8c089fc2.gif",
+    "static/media/background.png": "/react1/static/media/background.6f4e5bef67f3d385a3b3.png",
+    "static/media/donaldtrump.gif": "/react1/static/media/donaldtrump.49aa58b1e7bedf532cea.gif",
+    "static/media/fondomanual.png": "/react1/static/media/fondomanual.bda043ca4a0c20d5ea7c.png",
+    "static/media/caipiriña.png": "/react1/static/media/caipiriña.5eaf1a91a3c1cfb2d0f4.png",
+    "static/media/Diseñofuturista.png": "/react1/static/media/Diseñofuturista.5ed6c863b1e12427cd2c.png",
+    "static/media/piscola.png": "/react1/static/media/piscola.c923718fb9191960a6fb.png",
+    "static/media/whisky.png": "/react1/static/media/whisky.9c4648981ed4f25b0bbd.png",
+    "static/media/mujer.png": "/react1/static/media/mujer.f2ea50cb9f64c40248f7.png",
+    "static/media/ojos.png": "/react1/static/media/ojos.3595430153d33749ba10.png",
+    "static/media/homerocerveza.png": "/react1/static/media/homerocerveza.258b23384d7e2db05e6b.png",
+    "static/media/jugo.png": "/react1/static/media/jugo.eb7efde2ffbb71738c16.png",
+    "static/media/react3d.png": "/react1/static/media/react3d.a58efe19178b143384ec.png",
+    "static/media/hombre.png": "/react1/static/media/hombre.f04999319ee7d99df6b2.png",
+    "static/media/logo.svg": "/react1/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/react1/index.html",
+    "main.784d4259.css.map": "/react1/static/css/main.784d4259.css.map",
+    "main.faea43a1.js.map": "/react1/static/js/main.faea43a1.js.map",
+    "453.20aaacc4.chunk.js.map": "/react1/static/js/453.20aaacc4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.784d4259.css",
+    "static/js/main.faea43a1.js"
+  ]
+}
