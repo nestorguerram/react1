@@ -13,7 +13,7 @@ import Cierre from "./Cierre";
 
 function App() {
   return (
-    <BrowserRouter basename="/react1/">
+    <BrowserRouter>
       <Routes>
         {/* Mostrar LoginForm en la ruta raíz '/' */}
         <Route path="/" element={<LoginForm />} />
@@ -36,3 +36,4 @@ function App() {
 
 export default App;
 
+{/*<BrowserRouter basename="/react1/">*/}
